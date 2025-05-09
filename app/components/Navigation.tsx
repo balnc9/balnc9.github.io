@@ -36,6 +36,15 @@ const Navigation = () => {
                                         </li>
                                         <li>
                                                 <a
+                                                        href="#education"
+                                                        className={`text-lg font-medium transition-colors ${isScrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                                                                }`}
+                                                >
+                                                        Education
+                                                </a>
+                                        </li>
+                                        <li>
+                                                <a
                                                         href="#experience"
                                                         className={`text-lg font-medium transition-colors ${isScrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white hover:text-blue-200'
                                                                 }`}
@@ -45,11 +54,29 @@ const Navigation = () => {
                                         </li>
                                         <li>
                                                 <a
+                                                        href="#projects"
+                                                        className={`text-lg font-medium transition-colors ${isScrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                                                                }`}
+                                                >
+                                                        Projects
+                                                </a>
+                                        </li>
+                                        <li>
+                                                <a
                                                         href="#skills"
                                                         className={`text-lg font-medium transition-colors ${isScrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white hover:text-blue-200'
                                                                 }`}
                                                 >
                                                         Skills
+                                                </a>
+                                        </li>
+                                        <li>
+                                                <a
+                                                        href="#certifications"
+                                                        className={`text-lg font-medium transition-colors ${isScrolled ? 'text-gray-800 hover:text-blue-600' : 'text-white hover:text-blue-200'
+                                                                }`}
+                                                >
+                                                        Certifications
                                                 </a>
                                         </li>
                                         <li>
@@ -67,4 +94,4 @@ const Navigation = () => {
         )
 }
 
-export default Navigation 
+export default Navigation
