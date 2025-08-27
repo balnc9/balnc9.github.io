@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resume - Matthew Chin</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Prism.js for LaTeX syntax highlighting -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+        <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+        <!-- Navigation -->
+        <nav class="bg-gray-900 text-white shadow-lg fixed w-full top-0 z-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="flex justify-between items-center py-4">
+                                <div class="flex items-center">
+                                        <h1 class="text-xl font-bold">Matthew Chin</h1>
+                                </div>
+                                <div class="hidden md:block">
+                                        <ul class="flex space-x-8">
+                                                <li><a href="index.html"
+                                                                class="hover:text-blue-400 transition duration-200">Home</a>
+                                                </li>
+                                                <li><a href="about.html"
+                                                                class="hover:text-blue-400 transition duration-200">About</a>
+                                                </li>
+                                                <li><a href="projects.html"
+                                                                class="hover:text-blue-400 transition duration-200">Projects</a>
+                                                </li>
+                                                <li><a href="resume_enhanced.html"
+                                                                class="text-blue-400 hover:text-blue-300 transition duration-200">Resume</a>
+                                                </li>
+                                                <li><a href="contact.html"
+                                                                class="hover:text-blue-400 transition duration-200">Contact</a>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <!-- Mobile menu button -->
+                                <div class="md:hidden">
+                                        <button id="mobile-menu-button" class="text-white hover:text-blue-400">
+                                                <i class="fas fa-bars text-xl"></i>
+                                        </button>
+                                </div>
+                        </div>
+                        <!-- Mobile menu -->
+                        <div id="mobile-menu" class="hidden md:hidden pb-4">
+                                <ul class="space-y-2">
+                                        <li><a href="index.html" class="block hover:text-blue-400">Home</a></li>
+                                        <li><a href="about.html" class="block hover:text-blue-400">About</a></li>
+                                        <li><a href="projects.html" class="block hover:text-blue-400">Projects</a></li>
+                                        <li><a href="resume_enhanced.html"
+                                                        class="block text-blue-400 hover:text-blue-300">Resume</a></li>
+                                        <li><a href="contact.html" class="block hover:text-blue-400">Contact</a></li>
+                                </ul>
+                        </div>
+                </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="pt-24 pb-16 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 text-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center">
+                                <h1 class="text-4xl md:text-5xl font-bold mb-6">My Resume</h1>
+                                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                                        View my resume in multiple formats: PDF, LaTeX source code, and rendered HTML
+                                </p>
+                                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 justify-center max-w-2xl mx-auto">
+                                        <a href="assets/Matthew_Chin_CV.pdf" download
+                                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-semibold transition duration-200 inline-flex items-center justify-center text-sm">
+                                                <i class="fas fa-download mr-2"></i>PDF - General
+                                        </a>
+                                        <a href="assets/Matthew_Chin_CyCV.pdf" download
+                                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-semibold transition duration-200 inline-flex items-center justify-center text-sm">
+                                                <i class="fas fa-download mr-2"></i>PDF - Cyber
+                                        </a>
+                                        <a href="assets/swe_cv.tex" download
+                                                class="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-4 py-3 rounded-lg font-semibold transition duration-200 inline-flex items-center justify-center text-sm">
+                                                <i class="fas fa-code mr-2"></i>LaTeX - General
+                                        </a>
+                                        <a href="assets/cyber_cv.tex" download
+                                                class="border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-white px-4 py-3 rounded-lg font-semibold transition duration-200 inline-flex items-center justify-center text-sm">
+                                                <i class="fas fa-code mr-2"></i>LaTeX - Cyber
+                                        </a>
+                                </div>
+                        </div>
+                </div>
+        </section>
+
+        <!-- Resume Viewer -->
+        <section class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <!-- Controls -->
+                        <div class="text-center mb-12">
+                                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Interactive Resume Viewer
+                                </h2>
+                                <div class="space-y-4">
+                                        <!-- Resume Type Selector -->
+                                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                                <button id="general-btn"
+                                                        class="resume-toggle bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition duration-200">
+                                                        <i class="fas fa-laptop-code mr-2"></i>General Software
+                                                        Engineering
+                                                </button>
+                                                <button id="cyber-btn"
+                                                        class="resume-toggle bg-gray-200 text-gray-700 hover:bg-gray-300 px-6 py-3 rounded-lg font-semibold transition duration-200">
+                                                        <i class="fas fa-shield-alt mr-2"></i>Cybersecurity Focus
+                                                </button>
+                                        </div>
+                                        <!-- View Type Selector -->
+                                        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                                                <button id="pdf-view-btn"
+                                                        class="view-toggle bg-indigo-600 text-white px-4 py-2 rounded-lg font-medium transition duration-200 text-sm">
+                                                        <i class="fas fa-file-pdf mr-2"></i>PDF View
+                                                </button>
+                                                <button id="latex-view-btn"
+                                                        class="view-toggle bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-2 rounded-lg font-medium transition duration-200 text-sm">
+                                                        <i class="fas fa-code mr-2"></i>LaTeX Source
+                                                </button>
+                                                <button id="rendered-view-btn"
+                                                        class="view-toggle bg-gray-200 text-gray-700 hover:bg-gray-300 px-4 py-2 rounded-lg font-medium transition duration-200 text-sm">
+                                                        <i class="fas fa-eye mr-2"></i>Rendered View
+                                                </button>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <!-- Resume Content -->
+                        <div class="bg-gray-100 rounded-xl p-6">
+                                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                                        <!-- PDF Views -->
+                                        <div id="general-pdf" class="resume-content">
+                                                <div class="text-center p-8">
+                                                        <div class="mb-6">
+                                                                <i
+                                                                        class="fas fa-file-pdf text-6xl text-blue-500 mb-4"></i>
+                                                                <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                                                                        General Software Engineering Resume</h3>
+                                                                <p class="text-gray-600 mb-6">PDF version optimized for
+                                                                        software engineering roles</p>
+                                                        </div>
+                                                        <div class="space-y-4">
+                                                                <iframe src="assets/Matthew_Chin_CV.pdf"
+                                                                        class="w-full h-96 border border-gray-300 rounded-lg"
+                                                                        title="Matthew Chin - General Resume"></iframe>
+                                                                <div
+                                                                        class="flex flex-col sm:flex-row gap-4 justify-center">
+                                                                        <a href="assets/Matthew_Chin_CV.pdf"
+                                                                                target="_blank"
+                                                                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-semibold transition duration-200 inline-flex items-center justify-center">
+                                                                                <i
+                                                                                        class="fas fa-external-link-alt mr-2"></i>Open
+                                                                                in New Tab
+                                                                        </a>
+                                                                        <a href="assets/Matthew_Chin_CV.pdf" download
+                                                                                class="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-2 rounded-lg font-semibold transition duration-200 inline-flex items-center justify-center">
+                                                                                <i
+                                                                                        class="fas fa-download mr-2"></i>Download
+                                                                                PDF
+                                                                        </a>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <div id="cyber-pdf" class="resume-content hidden">
+                                                <div class="text-center p-8">
+                                                        <div class="mb-6">
+                                                                <i
+                                                                        class="fas fa-shield-alt text-6xl text-green-500 mb-4"></i>
+                                                                <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                                                                        Cybersecurity-Focused Resume</h3>
+                                                                <p class="text-gray-600 mb-6">PDF version optimized for
+                                                                        cybersecurity roles</p>
+                                                        </div>
+                                                        <div class="space-y-4">
+                                                                <iframe src="assets/Matthew_Chin_CyCV.pdf"
+                                                                        class="w-full h-96 border border-gray-300 rounded-lg"
+                                                                        title="Matthew Chin - Cybersecurity Resume"></iframe>
+                                                                <div
+                                                                        class="flex flex-col sm:flex-row gap-4 justify-center">
+                                                                        <a href="assets/Matthew_Chin_CyCV.pdf"
+                                                                                target="_blank"
+                                                                                class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-semibold transition duration-200 inline-flex items-center justify-center">
+                                                                                <i
+                                                                                        class="fas fa-external-link-alt mr-2"></i>Open
+                                                                                in New Tab
+                                                                        </a>
+                                                                        <a href="assets/Matthew_Chin_CyCV.pdf" download
+                                                                                class="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 py-2 rounded-lg font-semibold transition duration-200 inline-flex items-center justify-center">
+                                                                                <i
+                                                                                        class="fas fa-download mr-2"></i>Download
+                                                                                PDF
+                                                                        </a>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <!-- LaTeX Source Views -->
+                                        <div id="general-latex" class="resume-content hidden">
+                                                <div class="p-6">
+                                                        <div class="flex items-center justify-between mb-4">
+                                                                <h3 class="text-2xl font-bold text-gray-900">General
+                                                                        Resume - LaTeX Source</h3>
+                                                                <div class="flex gap-2">
+                                                                        <button onclick="copyLatexCode('general')"
+                                                                                class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg font-medium transition duration-200 inline-flex items-center text-sm">
+                                                                                <i class="fas fa-copy mr-2"></i>Copy
+                                                                                Code
+                                                                        </button>
+                                                                        <a href="assets/swe_cv.tex" download
+                                                                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition duration-200 inline-flex items-center text-sm">
+                                                                                <i
+                                                                                        class="fas fa-download mr-2"></i>Download
+                                                                                .tex
+                                                                        </a>
+                                                                </div>
+                                                        </div>
+                                                        <div class="bg-gray-900 rounded-lg overflow-hidden">
+                                                                <div
+                                                                        class="bg-gray-800 px-4 py-2 flex items-center justify-between">
+                                                                        <span
+                                                                                class="text-gray-300 text-sm font-mono">swe_cv.tex</span>
+                                                                        <span class="text-gray-400 text-xs">LaTeX Resume
+                                                                                Source</span>
+                                                                </div>
+                                                                <pre
+                                                                        class="p-4 overflow-x-auto max-h-96"><code id="general-latex-code" class="language-latex text-sm"></code></pre>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <div id="cyber-latex" class="resume-content hidden">
+                                                <div class="p-6">
+                                                        <div class="flex items-center justify-between mb-4">
+                                                                <h3 class="text-2xl font-bold text-gray-900">
+                                                                        Cybersecurity Resume - LaTeX Source</h3>
+                                                                <div class="flex gap-2">
+                                                                        <button onclick="copyLatexCode('cyber')"
+                                                                                class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg font-medium transition duration-200 inline-flex items-center text-sm">
+                                                                                <i class="fas fa-copy mr-2"></i>Copy
+                                                                                Code
+                                                                        </button>
+                                                                        <a href="assets/cyber_cv.tex" download
+                                                                                class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition duration-200 inline-flex items-center text-sm">
+                                                                                <i
+                                                                                        class="fas fa-download mr-2"></i>Download
+                                                                                .tex
+                                                                        </a>
+                                                                </div>
+                                                        </div>
+                                                        <div class="bg-gray-900 rounded-lg overflow-hidden">
+                                                                <div
+                                                                        class="bg-gray-800 px-4 py-2 flex items-center justify-between">
+                                                                        <span
+                                                                                class="text-gray-300 text-sm font-mono">cyber_cv.tex</span>
+                                                                        <span class="text-gray-400 text-xs">LaTeX Resume
+                                                                                Source</span>
+                                                                </div>
+                                                                <pre
+                                                                        class="p-4 overflow-x-auto max-h-96"><code id="cyber-latex-code" class="language-latex text-sm"></code></pre>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <!-- Rendered HTML Views -->
+                                        <div id="general-rendered" class="resume-content hidden">
+                                                <div class="p-8 max-w-4xl mx-auto">
+                                                        <div class="bg-white border rounded-lg p-8 shadow-lg">
+                                                                <div class="text-center mb-8">
+                                                                        <h1
+                                                                                class="text-4xl font-bold text-gray-900 mb-2">
+                                                                                Matthew Chin</h1>
+                                                                        <div class="text-gray-600 space-y-1">
+                                                                                <p>781-697-4238 | <a
+                                                                                                href="mailto:matthwchin@proton.me"
+                                                                                                class="text-blue-600 hover:underline">matthwchin@proton.me</a>
+                                                                                </p>
+                                                                                <p><a href="https://linkedin.com/in/matthewleechin"
+                                                                                                class="text-blue-600 hover:underline">linkedin.com/in/matthewleechin</a>
+                                                                                        | <a href="https://github.com/balnc9"
+                                                                                                class="text-blue-600 hover:underline">github.com/balnc9</a>
+                                                                                </p>
+                                                                        </div>
+                                                                </div>
+
+                                                                <div class="space-y-6">
+                                                                        <div>
+                                                                                <h2
+                                                                                        class="text-xl font-bold text-gray-900 border-b border-gray-300 pb-1 mb-3">
+                                                                                        Education</h2>
+                                                                                <div
+                                                                                        class="flex justify-between items-start">
+                                                                                        <div>
+                                                                                                <h3
+                                                                                                        class="font-semibold">
+                                                                                                        University of
+                                                                                                        Maryland</h3>
+                                                                                                <p
+                                                                                                        class="text-gray-600 italic">
+                                                                                                        Bachelor of
+                                                                                                        Science in
+                                                                                                        Computer
+                                                                                                        Science, Minor
+                                                                                                        in Business</p>
+                                                                                        </div>
+                                                                                        <div
+                                                                                                class="text-right text-gray-600">
+                                                                                                <p>College Park, MD</p>
+                                                                                                <p class="italic">Jan.
+                                                                                                        2024 -- May 2027
+                                                                                                </p>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+
+                                                                        <div>
+                                                                                <h2
+                                                                                        class="text-xl font-bold text-gray-900 border-b border-gray-300 pb-1 mb-3">
+                                                                                        Experience</h2>
+                                                                                <div class="space-y-4">
+                                                                                        <div>
+                                                                                                <div
+                                                                                                        class="flex justify-between items-start mb-2">
+                                                                                                        <div>
+                                                                                                                <h3
+                                                                                                                        class="font-semibold">
+                                                                                                                        Undergraduate
+                                                                                                                        Data
+                                                                                                                        Research
+                                                                                                                        Assistant
+                                                                                                                </h3>
+                                                                                                                <p
+                                                                                                                        class="text-gray-600 italic">
+                                                                                                                        Digital
+                                                                                                                        Media
+                                                                                                                        Lab,
+                                                                                                                        UMD
+                                                                                                                </p>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                                class="text-right text-gray-600">
+                                                                                                                <p>Feb. 2025
+                                                                                                                        --
+                                                                                                                        Present
+                                                                                                                </p>
+                                                                                                                <p
+                                                                                                                        class="italic">
+                                                                                                                        College
+                                                                                                                        Park,
+                                                                                                                        MD
+                                                                                                                </p>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                <ul
+                                                                                                        class="list-disc ml-5 space-y-1 text-sm">
+                                                                                                        <li>Build Chrome
+                                                                                                                Extension
+                                                                                                                +
+                                                                                                                Next.js
+                                                                                                                frontend
+                                                                                                                to
+                                                                                                                scrape
+                                                                                                                and
+                                                                                                                visualize
+                                                                                                                live
+                                                                                                                news
+                                                                                                                metadata,
+                                                                                                                using
+                                                                                                                Chart.js,
+                                                                                                                TypeScript,
+                                                                                                                and DOM
+                                                                                                                parsing
+                                                                                                        </li>
+                                                                                                        <li>Designed
+                                                                                                                interactive
+                                                                                                                dashboards
+                                                                                                                and
+                                                                                                                visualizations
+                                                                                                                plotting
+                                                                                                                engagement
+                                                                                                                metrics,
+                                                                                                                enabling
+                                                                                                                researchers
+                                                                                                                and
+                                                                                                                local
+                                                                                                                news
+                                                                                                                anchors
+                                                                                                                to
+                                                                                                                analyze
+                                                                                                                user
+                                                                                                                interaction
+                                                                                                                patterns
+                                                                                                        </li>
+                                                                                                        <li>Implemented
+                                                                                                                live
+                                                                                                                data
+                                                                                                                pipelines
+                                                                                                                for
+                                                                                                                journalism
+                                                                                                                platforms
+                                                                                                                (e.g.,
+                                                                                                                Baltimore
+                                                                                                                Banner),
+                                                                                                                improving
+                                                                                                                efficiency
+                                                                                                                of
+                                                                                                                content
+                                                                                                                analysis
+                                                                                                        </li>
+                                                                                                </ul>
+                                                                                        </div>
+
+                                                                                        <div>
+                                                                                                <div
+                                                                                                        class="flex justify-between items-start mb-2">
+                                                                                                        <div>
+                                                                                                                <h3
+                                                                                                                        class="font-semibold">
+                                                                                                                        Development
+                                                                                                                        Intern
+                                                                                                                </h3>
+                                                                                                                <p
+                                                                                                                        class="text-gray-600 italic">
+                                                                                                                        Colexia
+                                                                                                                </p>
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                                class="text-right text-gray-600">
+                                                                                                                <p>Jun. 2025
+                                                                                                                        --
+                                                                                                                        Present
+                                                                                                                </p>
+                                                                                                                <p
+                                                                                                                        class="italic">
+                                                                                                                        New
+                                                                                                                        York,
+                                                                                                                        NY
+                                                                                                                </p>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                <ul
+                                                                                                        class="list-disc ml-5 space-y-1 text-sm">
+                                                                                                        <li>Built Python
+                                                                                                                +
+                                                                                                                BeautifulSoup4
+                                                                                                                scrapers
+                                                                                                                to
+                                                                                                                index/organize
+                                                                                                                product
+                                                                                                                datasets,
+                                                                                                                improving
+                                                                                                                dataset
+                                                                                                                standardization
+                                                                                                                for
+                                                                                                                external
+                                                                                                                ML
+                                                                                                                models
+                                                                                                        </li>
+                                                                                                        <li>Contributed
+                                                                                                                to
+                                                                                                                Firebase-based
+                                                                                                                wait
+                                                                                                                list
+                                                                                                                website
+                                                                                                                to
+                                                                                                                support
+                                                                                                                early-stage
+                                                                                                                startup
+                                                                                                                growth
+                                                                                                                and
+                                                                                                                exposure
+                                                                                                        </li>
+                                                                                                        <li>Automated
+                                                                                                                product
+                                                                                                                ingestion
+                                                                                                                pipeline
+                                                                                                                into
+                                                                                                                xlsx
+                                                                                                                folders
+                                                                                                                using
+                                                                                                                Google
+                                                                                                                Drive
+                                                                                                                API,
+                                                                                                                accelerating
+                                                                                                                data
+                                                                                                                reports
+                                                                                                                by 70%
+                                                                                                        </li>
+                                                                                                </ul>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+
+                                                                        <div>
+                                                                                <h2
+                                                                                        class="text-xl font-bold text-gray-900 border-b border-gray-300 pb-1 mb-3">
+                                                                                        Technical Skills</h2>
+                                                                                <div class="text-sm space-y-2">
+                                                                                        <p><span class="font-semibold">Languages:</span>
+                                                                                                Java, Python, C, (Rust,
+                                                                                                OCaml)</p>
+                                                                                        <p><span class="font-semibold">Frameworks:</span>
+                                                                                                React, Next.js, React
+                                                                                                Native, Firebase,
+                                                                                                Tailwind, Chart.js</p>
+                                                                                        <p><span class="font-semibold">Developer
+                                                                                                        Tools:</span>
+                                                                                                Git, PostHog, Framer
+                                                                                                Motion, BeautifulSoup4,
+                                                                                                Chrome Extensions API,
+                                                                                                Claude API</p>
+                                                                                        <p><span class="font-semibold">Certifications:</span>
+                                                                                                Tata Cybersecurity Job
+                                                                                                Simulation, Mastercard
+                                                                                                Cybersecurity Job
+                                                                                                Simulation, AWS ML
+                                                                                                Solutions (Coursera),
+                                                                                                CompTIA Sec+ (in
+                                                                                                progress)</p>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                        <div id="cyber-rendered" class="resume-content hidden">
+                                                <div class="p-8 max-w-4xl mx-auto">
+                                                        <div class="bg-white border rounded-lg p-8 shadow-lg">
+                                                                <div class="text-center mb-8">
+                                                                        <h1
+                                                                                class="text-4xl font-bold text-gray-900 mb-2">
+                                                                                Matthew Chin</h1>
+                                                                        <div class="text-gray-600 space-y-1">
+                                                                                <p>781-697-4238 | <a
+                                                                                                href="mailto:matthwchin@proton.me"
+                                                                                                class="text-blue-600 hover:underline">matthwchin@proton.me</a>
+                                                                                </p>
+                                                                                <p><a href="https://linkedin.com/in/matthewleechin"
+                                                                                                class="text-blue-600 hover:underline">linkedin.com/in/matthewleechin</a>
+                                                                                        | <a href="https://github.com/balnc9"
+                                                                                                class="text-blue-600 hover:underline">github.com/balnc9</a>
+                                                                                </p>
+                                                                        </div>
+                                                                </div>
+
+                                                                <div class="space-y-6">
+                                                                        <div>
+                                                                                <h2
+                                                                                        class="text-xl font-bold text-gray-900 border-b border-gray-300 pb-1 mb-3">
+                                                                                        Education</h2>
+                                                                                <div
+                                                                                        class="flex justify-between items-start">
+                                                                                        <div>
+                                                                                                <h3
+                                                                                                        class="font-semibold">
+                                                                                                        University of
+                                                                                                        Maryland</h3>
+                                                                                                <p
+                                                                                                        class="text-gray-600 italic">
+                                                                                                        Bachelor of
+                                                                                                        Science in
+                                                                                                        Computer
+                                                                                                        Science, Minor
+                                                                                                        in Business</p>
+                                                                                        </div>
+                                                                                        <div
+                                                                                                class="text-right text-gray-600">
+                                                                                                <p>College Park, MD</p>
+                                                                                                <p class="italic">Jan.
+                                                                                                        2024 -- May 2027
+                                                                                                </p>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+
+                                                                        <div>
+                                                                                <h2
+                                                                                        class="text-xl font-bold text-gray-900 border-b border-gray-300 pb-1 mb-3">
+                                                                                        Projects</h2>
+                                                                                <div class="space-y-4">
+                                                                                        <div>
+                                                                                                <h3
+                                                                                                        class="font-semibold">
+                                                                                                        Pseudo Random
+                                                                                                        Number
+                                                                                                        Generation Lab |
+                                                                                                        <span
+                                                                                                                class="font-normal italic">SEED
+                                                                                                                Labs
+                                                                                                                (Ubuntu
+                                                                                                                VM)</span>
+                                                                                                </h3>
+                                                                                                <ul
+                                                                                                        class="list-disc ml-5 space-y-1 text-sm mt-1">
+                                                                                                        <li>Investigated
+                                                                                                                weaknesses
+                                                                                                                in Linux
+                                                                                                                PRNGs
+                                                                                                                (/dev/random
+                                                                                                                and
+                                                                                                                /dev/urandom)
+                                                                                                                and
+                                                                                                                conducted
+                                                                                                                statistical
+                                                                                                                randomness
+                                                                                                                testing
+                                                                                                        </li>
+                                                                                                        <li>Built a
+                                                                                                                key-recovery
+                                                                                                                attack
+                                                                                                                on AES
+                                                                                                                by
+                                                                                                                exploiting
+                                                                                                                poor
+                                                                                                                entropy,
+                                                                                                                demonstrating
+                                                                                                                cryptographic
+                                                                                                                vulnerabilities
+                                                                                                        </li>
+                                                                                                        <li>Implemented
+                                                                                                                secure
+                                                                                                                key-generation
+                                                                                                                in C for
+                                                                                                                128/256-bit
+                                                                                                                encryption,
+                                                                                                                applying
+                                                                                                                entropy
+                                                                                                                analysis
+                                                                                                                from
+                                                                                                                kernel-level
+                                                                                                                sources
+                                                                                                        </li>
+                                                                                                </ul>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+
+                                                                        <div>
+                                                                                <h2
+                                                                                        class="text-xl font-bold text-gray-900 border-b border-gray-300 pb-1 mb-3">
+                                                                                        Technical Skills</h2>
+                                                                                <div class="text-sm space-y-2">
+                                                                                        <p><span class="font-semibold">Languages:</span>
+                                                                                                Java, Python, C, (Rust,
+                                                                                                OCaml)</p>
+                                                                                        <p><span class="font-semibold">University
+                                                                                                        Coursework:</span>
+                                                                                                Cryptography, Computer
+                                                                                                Networks, Computer
+                                                                                                Systems, Algorithms,
+                                                                                                Organization of
+                                                                                                Programming Languages,
+                                                                                                Discrete Structures, OOP
+                                                                                                I/II</p>
+                                                                                        <p><span class="font-semibold">Certifications:</span>
+                                                                                                CompTIA Sec+ (Expected
+                                                                                                Jan. 2026), Tata
+                                                                                                Cybersecurity Job
+                                                                                                Simulation, Mastercard
+                                                                                                Cybersecurity Job
+                                                                                                Simulation, AWS ML
+                                                                                                Solutions (Coursera)</p>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </section>
+
+        <!-- LaTeX Benefits Section -->
+        <section class="py-16 bg-gray-100">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-12">
+                                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why LaTeX for Resumes?
+                                </h2>
+                                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                                        Showcasing technical skills through document preparation
+                                </p>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-8">
+                                <div class="bg-white p-6 rounded-xl shadow-lg">
+                                        <div class="flex items-center mb-4">
+                                                <div
+                                                        class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                                        <i class="fas fa-code text-blue-600 text-xl"></i>
+                                                </div>
+                                                <h3 class="text-xl font-semibold text-gray-900">Technical Proficiency
+                                                </h3>
+                                        </div>
+                                        <p class="text-gray-600">
+                                                LaTeX demonstrates comfort with markup languages, version control, and
+                                                command-line tools -
+                                                essential skills for developers.
+                                        </p>
+                                </div>
+
+                                <div class="bg-white p-6 rounded-xl shadow-lg">
+                                        <div class="flex items-center mb-4">
+                                                <div
+                                                        class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                                        <i class="fas fa-eye text-green-600 text-xl"></i>
+                                                </div>
+                                                <h3 class="text-xl font-semibold text-gray-900">Professional Formatting
+                                                </h3>
+                                        </div>
+                                        <p class="text-gray-600">
+                                                Consistent, precise typography and layout that looks professional and
+                                                stands out from typical Word document resumes.
+                                        </p>
+                                </div>
+
+                                <div class="bg-white p-6 rounded-xl shadow-lg">
+                                        <div class="flex items-center mb-4">
+                                                <div
+                                                        class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                                        <i class="fas fa-history text-purple-600 text-xl"></i>
+                                                </div>
+                                                <h3 class="text-xl font-semibold text-gray-900">Version Control Ready
+                                                </h3>
+                                        </div>
+                                        <p class="text-gray-600">
+                                                Plain text format works perfectly with Git, allowing for proper version
+                                                control,
+                                                collaboration, and change tracking.
+                                        </p>
+                                </div>
+                        </div>
+                </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="flex flex-col md:flex-row justify-between items-center">
+                                <div class="mb-4 md:mb-0">
+                                        <h3 class="text-xl font-bold">Matthew Chin</h3>
+                                        <p class="text-gray-400">Computer Science Student & Aspiring Engineer</p>
+                                </div>
+                                <div class="flex space-x-6">
+                                        <a href="mailto:matthwchin@proton.me"
+                                                class="text-gray-400 hover:text-blue-400 transition duration-200">
+                                                <i class="fas fa-envelope text-xl"></i>
+                                        </a>
+                                        <a href="https://linkedin.com/in/matthewleechin" target="_blank"
+                                                class="text-gray-400 hover:text-blue-400 transition duration-200">
+                                                <i class="fab fa-linkedin text-xl"></i>
+                                        </a>
+                                        <a href="https://github.com/balnc9" target="_blank"
+                                                class="text-gray-400 hover:text-blue-400 transition duration-200">
+                                                <i class="fab fa-github text-xl"></i>
+                                        </a>
+                                </div>
+                        </div>
+                        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                                <p class="text-gray-400">&copy; 2024 Matthew Chin. All rights reserved.</p>
+                        </div>
+                </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script>
+                // LaTeX source code content
+                const latexSources = {
+                        general: `\\documentclass[letterpaper,11pt]{article}
+
+\\usepackage{latexsym}
+\\usepackage[empty]{fullpage}
+\\usepackage{titlesec}
+\\usepackage{marvosym}
+\\usepackage[usenames,dvipsnames]{color}
+\\usepackage{verbatim}
+\\usepackage{enumitem}
+\\usepackage[hidelinks]{hyperref}
+\\usepackage{fancyhdr}
+\\usepackage[english]{babel}
+\\usepackage{tabularx}
+\\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \\usepackage[sfdefault]{FiraSans}
+% \\usepackage[sfdefault]{roboto}
+% \\usepackage[sfdefault]{noto-sans}
+% \\usepackage[default]{sourcesanspro}
+
+% serif
+% \\usepackage{CormorantGaramond}
+% \\usepackage{charter}
+
+%-------------------------------------------
+% HEADER / FOOTER SETTINGS
+\\pagestyle{fancy}
+\\fancyhf{} % clear all header and footer fields
+\\fancyfoot{}
+\\renewcommand{\\headrulewidth}{0pt}
+\\renewcommand{\\footrulewidth}{0pt}
+
+%-------------------------------------------
+% MARGINS
+\\addtolength{\\oddsidemargin}{-0.5in}
+\\addtolength{\\evensidemargin}{-0.5in}
+\\addtolength{\\textwidth}{1in}
+\\addtolength{\\topmargin}{-.5in}
+\\addtolength{\\textheight}{1.0in}
+
+\\urlstyle{same}
+
+\\raggedbottom
+\\raggedright
+\\setlength{\\tabcolsep}{0in}
+
+%-------------------------------------------
+% SECTION FORMATTING
+\\titleformat{\\section}{
+  \\vspace{-4pt}\\scshape\\raggedright\\large
+}{}{0em}{}[\\color{black}\\titlerule \\vspace{-5pt}]
+
+% Ensure PDF is ATS parsable
+\\pdfgentounicode=1
+
+%-------------------------------------------
+% CUSTOM COMMANDS
+\\newcommand{\\resumeItem}[1]{
+  \\item\\small{
+    {#1 \\vspace{-2pt}}
+  }
+}
+
+\\newcommand{\\resumeSubheading}[4]{
+  \\vspace{-2pt}\\item
+    \\begin{tabular*}{0.97\\textwidth}[t]{l@{\\extracolsep{\\fill}}r}
+      \\textbf{#1} & #2 \\\\
+      \\textit{\\small#3} & \\textit{\\small #4} \\\\
+    \\end{tabular*}\\vspace{-7pt}
+}
+
+\\newcommand{\\resumeSubSubheading}[2]{
+  \\item
+    \\begin{tabular*}{0.97\\textwidth}{l@{\\extracolsep{\\fill}}r}
+      \\textit{\\small#1} & \\textit{\\small #2} \\\\
+    \\end{tabular*}\\vspace{-7pt}
+}
+
+\\newcommand{\\resumeProjectHeading}[2]{
+  \\item
+    \\begin{tabular*}{0.97\\textwidth}{l@{\\extracolsep{\\fill}}r}
+      \\small#1 & #2 \\\\
+    \\end{tabular*}\\vspace{-7pt}
+}
+
+\\newcommand{\\resumeSubItem}[1]{\\resumeItem{#1}\\vspace{-4pt}}
+
+\\renewcommand\\labelitemii{$\\vcenter{\\hbox{\\tiny$\\bullet$}}$}
+
+\\newcommand{\\resumeSubHeadingListStart}{\\begin{itemize}[leftmargin=0.15in, label={}]}
+\\newcommand{\\resumeSubHeadingListEnd}{\\end{itemize}}
+\\newcommand{\\resumeItemListStart}{\\begin{itemize}}
+\\newcommand{\\resumeItemListEnd}{\\end{itemize}\\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%
+\\begin{document}
+
+%----------HEADING----------
+\\begin{center}
+    \\textbf{\\Huge \\scshape Matthew Chin} \\\\ \\vspace{1pt}
+    \\small 781-697-4238 $|$ \\href{mailto:matthwchin@proton.me}{\\underline{matthwchin@proton.me}} $|$ 
+    \\href{https://linkedin.com/in/matthewleechin}{\\underline{linkedin.com/in/matthewleechin}} $|$
+    \\href{https://github.com/balnc9}{\\underline{github.com/balnc9}}
+\\end{center}
+
+%-----------EDUCATION-----------
+\\section{Education}
+  \\resumeSubHeadingListStart
+    \\resumeSubheading
+      {University of Maryland}{College Park, MD}
+      {Bachelor of Science in Computer Science, Minor in Business}{Jan. 2024 -- May 2027}
+  \\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\\section{Experience}
+  \\resumeSubHeadingListStart
+
+    \\resumeSubheading
+      {Undergraduate Data Research Assistant}{Feb. 2025 -- Present}
+      {Digital Media Lab, UMD}{College Park, MD}
+      \\resumeItemListStart
+        \\resumeItem{Build Chrome Extension + Next.js frontend to scrape and visualize live news metadata, using Chart.js, TypeScript, and DOM parsing}
+        \\resumeItem{Designed interactive dashboards and visualizations plotting engagement metrics, enabling researchers and local news anchors to analyze user interaction patterns}
+        \\resumeItem{Implemented live data pipelines for journalism platforms (e.g., Baltimore Banner), improving efficiency of content analysis}
+      \\resumeItemListEnd
+
+    \\resumeSubheading
+      {Development Intern}{Jun. 2025 -- Present}
+      {Colexia}{New York, NY}
+      \\resumeItemListStart
+        \\resumeItem{Built Python + BeautifulSoup4 scrapers to index/organize product datasets, improving dataset standardization for external ML models}
+        \\resumeItem{Contributed to Firebase-based wait list website to support early-stage startup growth and exposure}
+        \\resumeItem{Automated product ingestion pipeline into xlsx folders using Google Drive API, accelerating data reports by 70\\% }
+      \\resumeItemListEnd
+
+  \\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\\section{Projects}
+  \\resumeSubHeadingListStart
+
+    \\resumeProjectHeading
+      {\\textbf{Smart Story Agent} $|$ \\emph{Next.js, TypeScript, AI}}{}
+      \\resumeItemListStart
+        \\resumeItem{Developed a full-stack web app analyzing live news articles with Claude API + custom algorithms for engagement metrics.}
+        \\resumeItem{Designed interactive UI with Tailwind CSS + Framer Motion, increasing usabiity and visualization quality.}
+        \\resumeItem{Integrated PostHog analytics for user behavior tracking and engagement insights.}
+      \\resumeItemListEnd
+
+  \\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\\section{Technical Skills}
+  \\begin{itemize}[leftmargin=0.15in, label={}]
+    \\small{\\item{
+      \\textbf{Languages}{: Java, Python, C , (Rust, OCaml)} \\\\
+      \\textbf{Frameworks}{: React, Next.js, React Native, Firebase, Tailwind, Chart.js} \\\\
+      \\textbf{Developer Tools}{: Git, PostHog, Framer Motion, BeautifulSoup4, Chrome Extensions API, Claude API} \\\\
+      \\textbf{Certifications}{: Tata Cybersecurity Job Simulation, Mastercard Cybersecurity Job Simulation, AWS ML Solutions (Coursera), CompTIA Sec+ (in progress)}\\\\
+      \\textbf{Other}{: Seal of Bi-literacy (Spanish \\& English, 2022)}
+    }}
+  \\end{itemize}
+
+%-------------------------------------------
+\\end{document}`,
+                        cyber: `\\documentclass[letterpaper,11pt]{article}
+
+\\usepackage{latexsym}
+\\usepackage[empty]{fullpage}
+\\usepackage{titlesec}
+\\usepackage{marvosym}
+\\usepackage[usenames,dvipsnames]{color}
+\\usepackage{verbatim}
+\\usepackage{enumitem}
+\\usepackage[hidelinks]{hyperref}
+\\usepackage{fancyhdr}
+\\usepackage[english]{babel}
+\\usepackage{tabularx}
+\\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \\usepackage[sfdefault]{FiraSans}
+% \\usepackage[sfdefault]{roboto}
+% \\usepackage[sfdefault]{noto-sans}
+% \\usepackage[default]{sourcesanspro}
+
+% serif
+% \\usepackage{CormorantGaramond}
+% \\usepackage{charter}
+
+%-------------------------------------------
+% HEADER / FOOTER SETTINGS
+\\pagestyle{fancy}
+\\fancyhf{} % clear all header and footer fields
+\\fancyfoot{}
+\\renewcommand{\\headrulewidth}{0pt}
+\\renewcommand{\\footrulewidth}{0pt}
+
+%-------------------------------------------
+% MARGINS
+\\addtolength{\\oddsidemargin}{-0.5in}
+\\addtolength{\\evensidemargin}{-0.5in}
+\\addtolength{\\textwidth}{1in}
+\\addtolength{\\topmargin}{-.5in}
+\\addtolength{\\textheight}{1.0in}
+
+\\urlstyle{same}
+
+\\raggedbottom
+\\raggedright
+\\setlength{\\tabcolsep}{0in}
+
+%-------------------------------------------
+% SECTION FORMATTING
+\\titleformat{\\section}{
+  \\vspace{-4pt}\\scshape\\raggedright\\large
+}{}{0em}{}[\\color{black}\\titlerule \\vspace{-5pt}]
+
+% Ensure PDF is ATS parsable
+\\pdfgentounicode=1
+
+%-------------------------------------------
+% CUSTOM COMMANDS
+\\newcommand{\\resumeItem}[1]{
+  \\item\\small{
+    {#1 \\vspace{-2pt}}
+  }
+}
+
+\\newcommand{\\resumeSubheading}[4]{
+  \\vspace{-2pt}\\item
+    \\begin{tabular*}{0.97\\textwidth}[t]{l@{\\extracolsep{\\fill}}r}
+      \\textbf{#1} & #2 \\\\
+      \\textit{\\small#3} & \\textit{\\small #4} \\\\
+    \\end{tabular*}\\vspace{-7pt}
+}
+
+\\newcommand{\\resumeSubSubheading}[2]{
+  \\item
+    \\begin{tabular*}{0.97\\textwidth}{l@{\\extracolsep{\\fill}}r}
+      \\textit{\\small#1} & \\textit{\\small #2} \\\\
+    \\end{tabular*}\\vspace{-7pt}
+}
+
+\\newcommand{\\resumeProjectHeading}[2]{
+  \\item
+    \\begin{tabular*}{0.97\\textwidth}{l@{\\extracolsep{\\fill}}r}
+      \\small#1 & #2 \\\\
+    \\end{tabular*}\\vspace{-7pt}
+}
+
+\\newcommand{\\resumeSubItem}[1]{\\resumeItem{#1}\\vspace{-4pt}}
+
+\\renewcommand\\labelitemii{$\\vcenter{\\hbox{\\tiny$\\bullet$}}$}
+
+\\newcommand{\\resumeSubHeadingListStart}{\\begin{itemize}[leftmargin=0.15in, label={}]}
+\\newcommand{\\resumeSubHeadingListEnd}{\\end{itemize}}
+\\newcommand{\\resumeItemListStart}{\\begin{itemize}}
+\\newcommand{\\resumeItemListEnd}{\\end{itemize}\\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%
+\\begin{document}
+
+%----------HEADING----------
+\\begin{center}
+    \\textbf{\\Huge \\scshape Matthew Chin} \\\\ \\vspace{1pt}
+    \\small 781-697-4238 $|$ \\href{mailto:matthwchin@proton.me}{\\underline{matthwchin@proton.me}} $|$ 
+    \\href{https://linkedin.com/in/matthewleechin}{\\underline{linkedin.com/in/matthewleechin}} $|$
+    \\href{https://github.com/balnc9}{\\underline{github.com/balnc9}}
+\\end{center}
+
+%-----------EDUCATION-----------
+\\section{Education}
+  \\resumeSubHeadingListStart
+    \\resumeSubheading
+      {University of Maryland}{College Park, MD}
+      {Bachelor of Science in Computer Science, Minor in Business}{Jan. 2024 -- May 2027}
+  \\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\\section{Experience}
+  \\resumeSubHeadingListStart
+
+    \\resumeSubheading
+      {Undergraduate Data Research Assistant}{Feb. 2025 -- Present}
+      {Digital Media Lab, UMD}{College Park, MD}
+      \\resumeItemListStart
+        \\resumeItem{Build Chrome Extension + Next.js frontend to scrape and visualize live news metadata, using Chart.js, TypeScript, and DOM parsing}
+        \\resumeItem{Designed interactive dashboards and visualizations plotting engagement metrics, enabling researchers and local news anchors to analyze user interaction patterns}
+        \\resumeItem{Applied secure coding practices in extension development, managing permissions, content scripts, and safe storage APIs.}
+      \\resumeItemListEnd
+
+  \\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\\section{Projects}
+  \\resumeSubHeadingListStart
+
+    \\resumeProjectHeading
+      {\\textbf{Pseudo Random Number Generation Lab} $|$ \\emph{SEED Labs (Ubuntu VM)}}{}
+      \\resumeItemListStart
+        \\resumeItem{Investigated weaknesses in Linux PRNGs (/dev/random and /dev/urandom) and conducted statistical randomness testing.}
+        \\resumeItem{Built a key-recovery attack on AES by exploiting poor entropy, demonstrating cryptographic vulnerabilities.}
+        \\resumeItem{Implemented secure key-generation in C for 128/256-bit encryption, applying entropy analysis from kernel-level sources.}
+      \\resumeItemListEnd
+
+  \\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\\section{Technical Skills}
+  \\begin{itemize}[leftmargin=0.15in, label={}]
+    \\small{\\item{
+      \\textbf{Languages}{: Java, Python, C , (Rust, OCaml)} \\\\
+      \\textbf{University Coursework}{: Cryptography, Computer Networks, Computer Systems, Algorithms, Organization of Programming Langauges, Discrete Structures, OOP I/II.} \\\\
+      \\textbf{Certifications}{: CompTIA Sec+ (Expected Jan. 2026), Tata Cybersecurity Job Simulation, \\textbf{Mastercard} Cybersecurity Job Simulation, AWS ML Solutions (Coursera)}\\\\
+      \\textbf{Other}{: Seal of Bi-literacy (Spanish \\& English, 2022)}
+    }}
+  \\end{itemize}
+
+%-------------------------------------------
+\\end{document}`
+                };
+
+                // State management
+                let currentResumeType = 'general';
+                let currentViewType = 'pdf';
+
+                // Initialize page
+                document.addEventListener('DOMContentLoaded', function () {
+                        loadLatexCode();
+                        updateDisplay();
+                });
+
+                // Mobile Menu Toggle
+                document.getElementById('mobile-menu-button').addEventListener('click', function () {
+                        const mobileMenu = document.getElementById('mobile-menu');
+                        mobileMenu.classList.toggle('hidden');
+                });
+
+                // Resume type toggles
+                document.getElementById('general-btn').addEventListener('click', function () {
+                        setResumeType('general');
+                });
+
+                document.getElementById('cyber-btn').addEventListener('click', function () {
+                        setResumeType('cyber');
+                });
+
+                // View type toggles
+                document.getElementById('pdf-view-btn').addEventListener('click', function () {
+                        setViewType('pdf');
+                });
+
+                document.getElementById('latex-view-btn').addEventListener('click', function () {
+                        setViewType('latex');
+                });
+
+                document.getElementById('rendered-view-btn').addEventListener('click', function () {
+                        setViewType('rendered');
+                });
+
+                function setResumeType(type) {
+                        currentResumeType = type;
+
+                        // Update resume type buttons
+                        const generalBtn = document.getElementById('general-btn');
+                        const cyberBtn = document.getElementById('cyber-btn');
+
+                        if (type === 'general') {
+                                generalBtn.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                                generalBtn.classList.add('bg-blue-600', 'text-white');
+                                cyberBtn.classList.remove('bg-blue-600', 'text-white');
+                                cyberBtn.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                        } else {
+                                cyberBtn.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                                cyberBtn.classList.add('bg-blue-600', 'text-white');
+                                generalBtn.classList.remove('bg-blue-600', 'text-white');
+                                generalBtn.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                        }
+
+                        updateDisplay();
+                }
+
+                function setViewType(type) {
+                        currentViewType = type;
+
+                        // Update view type buttons
+                        const pdfBtn = document.getElementById('pdf-view-btn');
+                        const latexBtn = document.getElementById('latex-view-btn');
+                        const renderedBtn = document.getElementById('rendered-view-btn');
+
+                        // Reset all buttons
+                        [pdfBtn, latexBtn, renderedBtn].forEach(btn => {
+                                btn.classList.remove('bg-indigo-600', 'text-white');
+                                btn.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                        });
+
+                        // Set active button
+                        if (type === 'pdf') {
+                                pdfBtn.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                                pdfBtn.classList.add('bg-indigo-600', 'text-white');
+                        } else if (type === 'latex') {
+                                latexBtn.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                                latexBtn.classList.add('bg-indigo-600', 'text-white');
+                        } else if (type === 'rendered') {
+                                renderedBtn.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+                                renderedBtn.classList.add('bg-indigo-600', 'text-white');
+                        }
+
+                        updateDisplay();
+                }
+
+                function updateDisplay() {
+                        // Hide all content sections
+                        const allSections = document.querySelectorAll('.resume-content');
+                        allSections.forEach(section => {
+                                section.classList.add('hidden');
+                        });
+
+                        // Show the correct section
+                        const sectionId = currentResumeType + '-' + currentViewType;
+                        const targetSection = document.getElementById(sectionId);
+                        if (targetSection) {
+                                targetSection.classList.remove('hidden');
+                        }
+
+                        // If showing LaTeX view, trigger syntax highlighting
+                        if (currentViewType === 'latex') {
+                                setTimeout(() => {
+                                        if (typeof Prism !== 'undefined') {
+                                                Prism.highlightAll();
+                                        }
+                                }, 100);
+                        }
+                }
+
+                function loadLatexCode() {
+                        // Load LaTeX source code into the code elements
+                        const generalCodeElement = document.getElementById('general-latex-code');
+                        const cyberCodeElement = document.getElementById('cyber-latex-code');
+
+                        if (generalCodeElement) {
+                                generalCodeElement.textContent = latexSources.general;
+                        }
+
+                        if (cyberCodeElement) {
+                                cyberCodeElement.textContent = latexSources.cyber;
+                        }
+                }
+
+                function copyLatexCode(type) {
+                        const code = latexSources[type];
+                        if (code && navigator.clipboard) {
+                                navigator.clipboard.writeText(code).then(function () {
+                                        // Show temporary success message
+                                        const button = event.target.closest('button');
+                                        const originalText = button.innerHTML;
+                                        button.innerHTML = '<i class="fas fa-check mr-2"></i>Copied!';
+                                        button.classList.add('bg-green-600');
+
+                                        setTimeout(() => {
+                                                button.innerHTML = originalText;
+                                                button.classList.remove('bg-green-600');
+                                        }, 2000);
+                                });
+                        }
+                }
+        </script>
+</body>
+
+</html>

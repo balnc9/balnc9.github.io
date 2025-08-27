@@ -7,6 +7,8 @@ A modern, responsive portfolio website built with HTML, Tailwind CSS, and JavaSc
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
 - **Modern UI**: Clean, professional design with smooth animations
 - **Multiple Resume Versions**: Dedicated pages for both general software engineering and cybersecurity-focused resumes
+- **LaTeX Source Display**: Interactive LaTeX source code viewer with syntax highlighting
+- **Multi-Format Resume**: PDF viewing, LaTeX source code, and rendered HTML versions
 - **Project Showcase**: Interactive project gallery with detailed descriptions
 - **Contact Form**: Functional contact form with FAQ section
 - **Fast Loading**: Optimized for quick load times using CDN resources
@@ -18,14 +20,17 @@ portfolio/
 │── index.html          # Homepage with hero section and navigation
 │── about.html          # About me page with skills and background
 │── projects.html       # Projects showcase page
-│── resume.html         # Resume page with PDF embedding and downloads
+│── resume.html         # Basic resume page with PDF embedding
+│── resume_enhanced.html # Enhanced resume with LaTeX source display
 │── contact.html        # Contact page with form and FAQ
 │── README.md           # This file
 │── assets/
 │   ├── css/            # Custom CSS files (if needed)
 │   ├── img/            # Images and photos
-│   ├── Matthew_Chin_CV.pdf        # General software engineering resume
-│   └── Matthew_Chin_CyCV.pdf      # Cybersecurity-focused resume
+│   ├── Matthew_Chin_CV.pdf        # General software engineering resume (PDF)
+│   ├── Matthew_Chin_CyCV.pdf      # Cybersecurity-focused resume (PDF)
+│   ├── swe_cv.tex      # General software engineering resume (LaTeX source)
+│   └── cyber_cv.tex    # Cybersecurity-focused resume (LaTeX source)
 ```
 
 ## 🚀 Getting Started
