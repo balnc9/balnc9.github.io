@@ -69,96 +69,7 @@
                         </div>
 
                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                <!-- Project Card 1: Smart Story Agent -->
-                                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6">
-                                        <div class="flex items-center justify-between mb-4">
-                                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                                                        <i class="fas fa-newspaper text-purple-600 text-xl"></i>
-                                                </div>
-                                                <a href="#" class="text-gray-400 hover:text-purple-600 transition duration-200">
-                                                        <i class="fab fa-github text-xl"></i>
-                                                </a>
-                                        </div>
-                                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Smart Story Agent</h3>
-                                        <p class="text-gray-600 text-sm mb-4">
-                                                Full-stack web app analyzing live news articles with Claude API and custom algorithms for engagement metrics.
-                                        </p>
-                                        <div class="flex flex-wrap gap-1 mb-4">
-                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Next.js</span>
-                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">TypeScript</span>
-                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Claude API</span>
-                                        </div>
-                                        <span class="text-purple-600 hover:text-purple-700 font-medium text-sm cursor-pointer" onclick="openModal('smart-story-modal')">View Details →</span>
-                                </div>
-
-                                <!-- Project Card 2: VFC Community App -->
-                                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6">
-                                        <div class="flex items-center justify-between mb-4">
-                                                <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
-                                                        <i class="fas fa-users text-indigo-600 text-xl"></i>
-                                                </div>
-                                                <a href="#" class="text-gray-400 hover:text-indigo-600 transition duration-200">
-                                                        <i class="fab fa-github text-xl"></i>
-                                                </a>
-                                        </div>
-                                        <h3 class="text-lg font-semibold text-gray-900 mb-2">VFC Community App</h3>
-                                        <p class="text-gray-600 text-sm mb-4">
-                                                Cross-platform app serving 250+ users with event management, push notifications, and MFA authentication.
-                                        </p>
-                                        <div class="flex flex-wrap gap-1 mb-4">
-                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">React Native</span>
-                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">TypeScript</span>
-                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Firebase</span>
-                                        </div>
-                                        <span class="text-indigo-600 hover:text-indigo-700 font-medium text-sm cursor-pointer" onclick="openModal('vfc-modal')">View Details →</span>
-                                </div>
-
-                                <!-- Project Card 3: Baltimore Banner Scraper -->
-                                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6">
-                                        <div class="flex items-center justify-between mb-4">
-                                                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                                                        <i class="fas fa-chrome text-red-600 text-xl"></i>
-                                                </div>
-                                                <a href="#" class="text-gray-400 hover:text-red-600 transition duration-200">
-                                                        <i class="fab fa-github text-xl"></i>
-                                                </a>
-                                        </div>
-                                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Baltimore Banner Scraper</h3>
-                                        <p class="text-gray-600 text-sm mb-4">
-                                                Chrome Extension (Manifest v3) to scrape article metadata and visualize results in real time.
-                                        </p>
-                                        <div class="flex flex-wrap gap-1 mb-4">
-                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">JavaScript</span>
-                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Chart.js</span>
-                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Chrome API</span>
-                                        </div>
-                                        <span class="text-red-600 hover:text-red-700 font-medium text-sm cursor-pointer" onclick="openModal('banner-modal')">View Details →</span>
-                                </div>
-
-                                <!-- Project Card 4: Portfolio Website -->
-                                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 cursor-pointer" onclick="openModal('portfolio-modal')">
-                                        <div class="flex items-center justify-between mb-4">
-                                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                                                        <i class="fas fa-globe text-blue-600 text-xl"></i>
-                                                </div>
-                                                <a href="https://github.com/balnc9/portfolio" class="text-gray-400 hover:text-blue-600 transition duration-200" onclick="event.stopPropagation()">
-                                                        <i class="fab fa-github text-xl"></i>
-                                                </a>
-                                        </div>
-                                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Portfolio Website</h3>
-                                        <p class="text-gray-600 text-sm mb-4">
-                                                A responsive portfolio website built with HTML, Tailwind CSS, and JavaScript. Features LaTeX source code display.
-                                        </p>
-                                        <div class="flex flex-wrap gap-1 mb-4">
-                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">HTML</span>
-                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Tailwind CSS</span>
-                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">JavaScript</span>
-                                        </div>
-                                        <span class="text-blue-600 hover:text-blue-700 font-medium text-sm">View Details →</span>
-                                </div>
-
-                                <!-- Project Card 5: Pseudo Random Number Generator Lab -->
-                                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 cursor-pointer" onclick="openModal('prng-modal')">
+                                <div class="relative bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 cursor-pointer overflow-hidden" onclick="openModal('prng-modal')" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('assets/img/security-scanner.jpg'); background-size: cover; background-position: center;">
                                         <div class="flex items-center justify-between mb-4">
                                                 <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                                                         <i class="fas fa-shield-alt text-green-600 text-xl"></i>
@@ -177,6 +88,93 @@
                                                 <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Cryptography</span>
                                         </div>
                                         <span class="text-green-600 hover:text-green-700 font-medium text-sm">View Details →</span>
+                                </div>
+                                <!-- Project Card 1: Smart Story Agent -->
+                                <div class="relative bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 cursor-pointer overflow-hidden" onclick="openModal('smart-story-modal')" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-size: cover; background-position: center;">
+                                        <div class="flex items-center justify-between mb-4">
+                                                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                                        <i class="fas fa-newspaper text-purple-600 text-xl"></i>
+                                                </div>
+                                                <a href="#" class="text-gray-400 hover:text-purple-600 transition duration-200" onclick="event.stopPropagation()">
+                                                        <i class="fab fa-github text-xl"></i>
+                                                </a>
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Smart Story Agent</h3>
+                                        <p class="text-gray-600 text-sm mb-4">
+                                                Full-stack web app analyzing live news articles with Claude API and custom algorithms for engagement metrics.
+                                        </p>
+                                        <div class="flex flex-wrap gap-1 mb-4">
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Next.js</span>
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">TypeScript</span>
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Claude API</span>
+                                        </div>
+                                        <span class="text-purple-600 hover:text-purple-700 font-medium text-sm">View Details →</span>
+                                </div>
+
+                                <!-- Project Card 2: VFC Community App -->
+                                <div class="relative bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 cursor-pointer overflow-hidden" onclick="openModal('vfc-modal')" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('assets/img/vfc-community-app.jpg'); background-size: cover; background-position: center;">
+                                        <div class="flex items-center justify-between mb-4">
+                                                <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                                                        <i class="fas fa-users text-indigo-600 text-xl"></i>
+                                                </div>
+                                                <a href="#" class="text-gray-400 hover:text-indigo-600 transition duration-200" onclick="event.stopPropagation()">
+                                                        <i class="fab fa-github text-xl"></i>
+                                                </a>
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-gray-900 mb-2">VFC Community App</h3>
+                                        <p class="text-gray-600 text-sm mb-4">
+                                                Cross-platform app serving 250+ users with event management, push notifications, and MFA authentication.
+                                        </p>
+                                        <div class="flex flex-wrap gap-1 mb-4">
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">React Native</span>
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">TypeScript</span>
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Firebase</span>
+                                        </div>
+                                        <span class="text-indigo-600 hover:text-indigo-700 font-medium text-sm">View Details →</span>
+                                </div>
+
+                                <!-- Project Card 3: Baltimore Banner Scraper -->
+                                <div class="relative bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 cursor-pointer overflow-hidden" onclick="openModal('banner-modal')" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('assets/img/baltimore-banner.jpg'); background-size: cover; background-position: center;">
+                                        <div class="flex items-center justify-between mb-4">
+                                                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                                                        <i class="fas fa-chrome text-red-600 text-xl"></i>
+                                                </div>
+                                                <a href="#" class="text-gray-400 hover:text-red-600 transition duration-200" onclick="event.stopPropagation()">
+                                                        <i class="fab fa-github text-xl"></i>
+                                                </a>
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Baltimore Banner Scraper</h3>
+                                        <p class="text-gray-600 text-sm mb-4">
+                                                Chrome Extension (Manifest v3) to scrape article metadata and visualize results in real time.
+                                        </p>
+                                        <div class="flex flex-wrap gap-1 mb-4">
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">JavaScript</span>
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Chart.js</span>
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Chrome API</span>
+                                        </div>
+                                        <span class="text-red-600 hover:text-red-700 font-medium text-sm">View Details →</span>
+                                </div>
+
+                                <!-- Project Card 4: Portfolio Website -->
+                                <div class="relative bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 cursor-pointer overflow-hidden" onclick="openModal('portfolio-modal')" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('assets/img/portfolio-website.jpg'); background-size: cover; background-position: center;">
+                                        <div class="flex items-center justify-between mb-4">
+                                                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                                        <i class="fas fa-globe text-blue-600 text-xl"></i>
+                                                </div>
+                                                <a href="https://github.com/balnc9/portfolio" class="text-gray-400 hover:text-blue-600 transition duration-200" onclick="event.stopPropagation()">
+                                                        <i class="fab fa-github text-xl"></i>
+                                                </a>
+                                        </div>
+                                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Portfolio Website</h3>
+                                        <p class="text-gray-600 text-sm mb-4">
+                                                A responsive portfolio website built with HTML, Tailwind CSS, and JavaScript. Features LaTeX source code display.
+                                        </p>
+                                        <div class="flex flex-wrap gap-1 mb-4">
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">HTML</span>
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Tailwind CSS</span>
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">JavaScript</span>
+                                        </div>
+                                        <span class="text-blue-600 hover:text-blue-700 font-medium text-sm">View Details →</span>
                                 </div>
 
                                 <!-- Project Card 6: Placeholder for Future -->
@@ -222,7 +220,7 @@
         <!-- Modals -->
         <!-- Smart Story Agent Modal -->
         <div id="smart-story-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
-                <div class="bg-white rounded-xl max-w-2xl max-h-[90vh] overflow-y-auto">
+                <div class="bg-white rounded-xl max-w-4xl w-full max-h-[95vh] overflow-y-auto">
                         <div class="p-6">
                                 <div class="flex justify-between items-center mb-4">
                                         <h3 class="text-2xl font-bold text-gray-900">Smart Story Agent</h3>
@@ -267,7 +265,7 @@
 
         <!-- VFC Community App Modal -->
         <div id="vfc-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
-                <div class="bg-white rounded-xl max-w-2xl max-h-[90vh] overflow-y-auto">
+                <div class="bg-white rounded-xl max-w-4xl w-full max-h-[95vh] overflow-y-auto">
                         <div class="p-6">
                                 <div class="flex justify-between items-center mb-4">
                                         <h3 class="text-2xl font-bold text-gray-900">VFC Community App</h3>
@@ -313,7 +311,7 @@
 
         <!-- Baltimore Banner Scraper Modal -->
         <div id="banner-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
-                <div class="bg-white rounded-xl max-w-2xl max-h-[90vh] overflow-y-auto">
+                <div class="bg-white rounded-xl max-w-4xl w-full max-h-[95vh] overflow-y-auto">
                         <div class="p-6">
                                 <div class="flex justify-between items-center mb-4">
                                         <h3 class="text-2xl font-bold text-gray-900">Baltimore Banner Scraper</h3>
@@ -359,7 +357,7 @@
 
         <!-- Portfolio Website Modal -->
         <div id="portfolio-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
-                <div class="bg-white rounded-xl max-w-2xl max-h-[90vh] overflow-y-auto">
+                <div class="bg-white rounded-xl max-w-4xl w-full max-h-[95vh] overflow-y-auto">
                         <div class="p-6">
                                 <div class="flex justify-between items-center mb-4">
                                         <h3 class="text-2xl font-bold text-gray-900">Portfolio Website</h3>
@@ -408,7 +406,7 @@
 
         <!-- PRNG Lab Modal -->
         <div id="prng-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
-                <div class="bg-white rounded-xl max-w-2xl max-h-[90vh] overflow-y-auto">
+                <div class="bg-white rounded-xl max-w-4xl w-full max-h-[95vh] overflow-y-auto">
                         <div class="p-6">
                                 <div class="flex justify-between items-center mb-4">
                                         <h3 class="text-2xl font-bold text-gray-900">Pseudo Random Number Generator Lab</h3>
@@ -446,7 +444,7 @@
                                                 <a href="#" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg text-center transition duration-200">
                                                         View Code
                                                 </a>
-                                                <a href="#" class="flex-1 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white py-2 px-4 rounded-lg text-center transition duration-200">
+                                                <a href="SEED_Security_Labs___Cryptography___Pseudo_Random_Number_Generator_Lab.pdf" target="_blank" class="flex-1 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white py-2 px-4 rounded-lg text-center transition duration-200">
                                                         Documentation
                                                 </a>
                                         </div>
