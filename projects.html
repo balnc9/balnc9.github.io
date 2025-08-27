@@ -61,12 +61,6 @@
         <!-- All Projects -->
         <section class="py-16 bg-white">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div class="text-center mb-12">
-                                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Projects</h2>
-                                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                                        A showcase of my software development and cybersecurity projects. Click on any project to learn more about it.
-                                </p>
-                        </div>
 
                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 <div class="relative bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 cursor-pointer overflow-hidden" onclick="openModal('prng-modal')" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('assets/img/security-scanner.jpg'); background-size: cover; background-position: center;">
@@ -444,11 +438,26 @@
                                                 <a href="#" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg text-center transition duration-200">
                                                         View Code
                                                 </a>
-                                                <a href="SEED_Security_Labs___Cryptography___Pseudo_Random_Number_Generator_Lab.pdf" target="_blank" class="flex-1 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white py-2 px-4 rounded-lg text-center transition duration-200">
+                                                <button onclick="openPDFModal()" class="flex-1 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white py-2 px-4 rounded-lg text-center transition duration-200">
                                                         Documentation
-                                                </a>
+                                                </button>
                                         </div>
                                 </div>
+                        </div>
+                </div>
+        </div>
+
+        <!-- PDF Viewer Modal -->
+        <div id="pdf-modal" class="fixed inset-0 bg-black bg-opacity-75 hidden z-50 flex items-center justify-center p-4">
+                <div class="bg-white rounded-xl w-full h-full max-w-7xl max-h-[95vh] flex flex-col">
+                        <div class="flex justify-between items-center p-4 border-b">
+                                <h3 class="text-xl font-bold text-gray-900">SEED Security Labs - Pseudo Random Number Generator Lab</h3>
+                                <button onclick="closePDFModal()" class="text-gray-400 hover:text-gray-600">
+                                        <i class="fas fa-times text-xl"></i>
+                                </button>
+                        </div>
+                        <div class="flex-1 p-4">
+                                <iframe id="pdf-iframe" src="" class="w-full h-full border-0 rounded-lg" style="min-height: 600px;"></iframe>
                         </div>
                 </div>
         </div>
@@ -512,11 +521,44 @@
                         if (event.key === 'Escape') {
                                 const visibleModal = document.querySelector('[id$="-modal"]:not(.hidden)');
                                 if (visibleModal) {
-                                        closeModal(visibleModal.id);
+                                        if (visibleModal.id === 'pdf-modal') {
+                                                closePDFModal();
+                                        } else {
+                                                closeModal(visibleModal.id);
+                                        }
                                 }
+                        }
+                });
+
+                // PDF Modal Functions
+                function openPDFModal() {
+                        const pdfModal = document.getElementById('pdf-modal');
+                        const pdfIframe = document.getElementById('pdf-iframe');
+                        
+                        // Set PDF source with toolbar parameter for better navigation
+                        pdfIframe.src = 'SEED_Security_Labs___Cryptography___Pseudo_Random_Number_Generator_Lab.pdf#toolbar=1&navpanes=1&scrollbar=1';
+                        
+                        pdfModal.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden';
+                }
+
+                function closePDFModal() {
+                        const pdfModal = document.getElementById('pdf-modal');
+                        const pdfIframe = document.getElementById('pdf-iframe');
+                        
+                        pdfModal.classList.add('hidden');
+                        pdfIframe.src = ''; // Clear the iframe source
+                        document.body.style.overflow = 'auto';
+                }
+
+                // Close PDF modal when clicking outside
+                document.getElementById('pdf-modal').addEventListener('click', function(event) {
+                        if (event.target === this) {
+                                closePDFModal();
                         }
                 });
         </script>
 </body>
 
+</html>
 </html>
