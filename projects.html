@@ -534,10 +534,10 @@
                 function openPDFModal() {
                         const pdfModal = document.getElementById('pdf-modal');
                         const pdfIframe = document.getElementById('pdf-iframe');
-                        
+
                         // Set PDF source with toolbar parameter for better navigation
                         pdfIframe.src = 'SEED_Security_Labs___Cryptography___Pseudo_Random_Number_Generator_Lab.pdf#toolbar=1&navpanes=1&scrollbar=1';
-                        
+
                         pdfModal.classList.remove('hidden');
                         document.body.style.overflow = 'hidden';
                 }
@@ -545,14 +545,14 @@
                 function closePDFModal() {
                         const pdfModal = document.getElementById('pdf-modal');
                         const pdfIframe = document.getElementById('pdf-iframe');
-                        
+
                         pdfModal.classList.add('hidden');
                         pdfIframe.src = ''; // Clear the iframe source
                         document.body.style.overflow = 'auto';
                 }
 
                 // Close PDF modal when clicking outside
-                document.getElementById('pdf-modal').addEventListener('click', function(event) {
+                document.getElementById('pdf-modal').addEventListener('click', function (event) {
                         if (event.target === this) {
                                 closePDFModal();
                         }
@@ -561,4 +561,5 @@
 </body>
 
 </html>
+
 </html>
