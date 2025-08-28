@@ -7,6 +7,21 @@
         <title>Matthew Chin - Portfolio</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Nerd Font - JetBrains Mono -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+        <script>
+                tailwind.config = {
+                        theme: {
+                                extend: {
+                                        fontFamily: {
+                                                'jetbrains': ['JetBrains Mono', 'monospace'],
+                                        }
+                                }
+                        }
+                }
+        </script>
 </head>
 
 <body class="bg-gray-50 min-h-screen">
@@ -15,7 +30,7 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="flex justify-between items-center py-4">
                                 <div class="flex items-center">
-                                        <h1 class="text-xl font-bold">Matthew Chin</h1>
+                                        <h1 class="text-xl font-bold font-jetbrains">Matthew Chin</h1>
                                 </div>
                                 <div class="hidden md:block">
                                         <ul class="flex space-x-8">
@@ -53,34 +68,38 @@
         </nav>
 
         <!-- Hero Section -->
-        <section class="pt-24 pb-16 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 text-white">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div class="flex flex-col lg:flex-row items-center justify-between">
-                                <div class="lg:w-1/2 text-center lg:text-left">
-                                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                                                Hi, I'm <span class="text-blue-400">Matthew Chin</span>
-                                        </h1>
-                                        <h2 class="text-xl md:text-2xl text-gray-300 mb-4">Student studying Computer
-                                                Science with a General Business Minor</h2>
-                                        <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl">
-                                                Aspiring Software Engineer & Cybersecurity Professional
-                                        </p>
-                                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                                                <a href="resume.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-200 text-center">
-                                                        <i class="fas fa-file-alt mr-2"></i>View Resume
-                                                </a>
-                                                <a href="projects.html" class="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-3 rounded-lg font-semibold transition duration-200 text-center">
-                                                        <i class="fas fa-code mr-2"></i>View Projects
-                                                </a>
+        <section class="pt-24 pb-16 text-white" style="background-image: url('assets/img/hero-background.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
+                <!-- Dark overlay for better text readability -->
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div class="relative z-10">
+                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                                <div class="flex flex-col lg:flex-row items-center justify-between">
+                                        <div class="lg:w-1/2 text-center lg:text-left">
+                                                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-jetbrains">
+                                                        Hi, I'm <span class="text-blue-400">Matthew Chin</span>
+                                                </h1>
+                                                <h2 class="text-xl md:text-2xl text-gray-300 mb-4 font-jetbrains">Student studying Computer
+                                                        Science with a General Business Minor</h2>
+                                                <p class="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl">
+                                                        Aspiring Software Engineer & Cybersecurity Professional
+                                                </p>
+                                                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                                                        <a href="resume.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition duration-200 text-center">
+                                                                <i class="fas fa-file-alt mr-2"></i>View Resume
+                                                        </a>
+                                                        <a href="projects.html" class="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-3 rounded-lg font-semibold transition duration-200 text-center">
+                                                                <i class="fas fa-code mr-2"></i>View Projects
+                                                        </a>
+                                                </div>
                                         </div>
-                                </div>
-                                <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center">
-                                        <div class="relative">
-                                                <!-- Profile photo -->
-                                                <img src="assets/img/profile.jpg" alt="Matthew Chin" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-blue-400" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                                <!-- Fallback gradient circle if image fails to load -->
-                                                <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-full flex items-center justify-center" style="display:none;">
-                                                        <i class="fas fa-user text-8xl md:text-9xl text-white opacity-80"></i>
+                                        <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center">
+                                                <div class="relative">
+                                                        <!-- Profile photo -->
+                                                        <img src="assets/img/profile.jpg" alt="Matthew Chin" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-blue-400" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                                        <!-- Fallback gradient circle if image fails to load -->
+                                                        <div class="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-full flex items-center justify-center" style="display:none;">
+                                                                <i class="fas fa-user text-8xl md:text-9xl text-white opacity-80"></i>
+                                                        </div>
                                                 </div>
                                         </div>
                                 </div>
@@ -120,7 +139,7 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="flex flex-col md:flex-row justify-between items-center">
                                 <div class="mb-4 md:mb-0">
-                                        <h3 class="text-xl font-bold">Matthew Chin</h3>
+                                        <h3 class="text-xl font-bold font-jetbrains">Matthew Chin</h3>
                                         <p class="text-gray-400">Computer Science Student & Aspiring Engineer</p>
                                 </div>
                                 <div class="flex space-x-6">
