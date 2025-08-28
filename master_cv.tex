@@ -150,6 +150,24 @@
 %-----------PROJECTS-----------
 \section{Projects}
   \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Pseudo Random Number Generation Lab} $|$ \emph{Linux (Ubuntu), C, Cryptography}}{}
+      \resumeItemListStart
+        \resumeItem{Investigated weaknesses in pseudo-random number generation within cryptographic systems.}
+        \resumeItem{Implemented key-generation algorithms in C, highlighting predictable patterns exploitable in AES encryption.}
+        \resumeItem{Compared /dev/random vs. /dev/urandom, analyzing entropy, blocking, and randomness quality.}
+        \resumeItem{Conducted entropy analysis of kernel randomness sources (keyboard, disk I/O, interrupts).}
+        \resumeItem{Applied statistical tools (ent) to assess randomness, strengthening 128/256-bit key generation methods.}
+      \resumeItemListEnd
+
+      \resumeProjectHeading
+      {\textbf{Temperature Time Machine} $|$ \emph{Python, Data Science}}{}
+      \resumeItemListStart
+        \resumeItem{Built a pipeline analyzing 57,000+ records over 155 years of NOAA/NASA climate data.}
+        \resumeItem{Applied multivariate regression, Fourier Transform, and statistical tests to identify climate patterns.}
+        \resumeItem{Automated data ingestion and error handling, outputting animated time-series visualizations.}
+        \resumeItem{Produced publication-grade statistical reports demonstrating long-term warming cycles.}
+      \resumeItemListEnd
 
     \resumeProjectHeading
       {\textbf{Smart Story Agent} $|$ \emph{Next.js, TypeScript, AI}}{}
@@ -170,6 +188,16 @@
         \resumeItem{Engineered a Chrome Extension (Manifest v3) to scrape article metadata (word count, images, headers) and visualize results in real time.}
         \resumeItem{Leveraged Web Storage + DOM parsing for efficient data restructuring and UI rendering}
       \resumeItemListEnd
+
+      
+    \resumeProjectHeading
+        {\textbf{Minesweeper Game Clone} $|$ \emph{C++}}{}
+      \resumeItemListStart
+        \resumeItem{Designed randomized mine placement algorithms with adaptive board sizes and difficulty levels.}
+        \resumeItem{Implemented a dynamic UI with color-coded indicators for mine proximity.}
+        \resumeItem{Optimized memory management for large board states and recursive operations.}
+      \resumeItemListEnd
+      
     
 
   \resumeSubHeadingListEnd
@@ -178,11 +206,13 @@
 \section{Technical Skills}
   \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-      \textbf{Languages}{: Java, Python, C , (Rust, OCaml)} \\
+      \textbf{Languages}{: Java, Python, C , (Rust, OCaml, C++)} \\
       \textbf{Frameworks}{: React, Next.js, React Native, Firebase, Tailwind, Chart.js} \\
       \textbf{Developer Tools}{: Git, PostHog, Framer Motion, BeautifulSoup4, Chrome Extensions API, Claude API} \\
-      \textbf{Certifications}{: Tata Cybersecurity Job Simulation, Mastercard Cybersecurity Job Simulation, AWS ML Solutions (Coursera), CompTIA Sec+ (in progress)}\\
-      \textbf{Other}{: Seal of Bi-literacy (Spanish \& English, 2022)}
+      \textbf{Data}{: Pandas, NumPy, MATLAB, SciPy, Statsmodels}\\
+      \textbf{Certifications}{: Tata Cybersecurity Job Simulation, Mastercard Cybersecurity Job Simulation, AWS ML Solutions (Coursera), CompTIA Sec+ (in progress), SEEDLabs PRNG Lab (Ubuntu Linux VM 20.4)}\\
+      \textbf{Other}{: Seal of Bi-literacy (Spanish \& English, 2022)}\\
+      \textbf{Coursework}{: Cryptography, Data Structures \& Algorithms, Organization of Programming Languages, Computer Systems (C), OOP I/II, Discrete Structures, Linear Algebra, Applied Statistics}
     }}
   \end{itemize}
 
