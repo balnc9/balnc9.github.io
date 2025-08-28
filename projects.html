@@ -171,21 +171,26 @@
                                         <span class="text-blue-600 hover:text-blue-700 font-medium text-sm">View Details →</span>
                                 </div>
 
-                                <!-- Project Card 6: Placeholder for Future -->
-                                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 border-2 border-dashed border-gray-300">
+                                <!-- Project Card 5: Temperature Time Machine -->
+                                <div class="relative bg-white rounded-lg shadow-md hover:shadow-lg transition duration-300 p-6 cursor-pointer overflow-hidden" onclick="openModal('temperature-modal')" style="background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('assets/img/TTM.jpg'); background-size: cover; background-position: center;">
                                         <div class="flex items-center justify-between mb-4">
-                                                <div class="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center">
-                                                        <i class="fas fa-plus text-gray-400 text-xl"></i>
+                                                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                                                        <i class="fas fa-chart-line text-orange-600 text-xl"></i>
                                                 </div>
+                                                <a href="#" class="text-gray-400 hover:text-orange-600 transition duration-200" onclick="event.stopPropagation()">
+                                                        <i class="fab fa-github text-xl"></i>
+                                                </a>
                                         </div>
-                                        <h3 class="text-lg font-semibold text-gray-500 mb-2">Future Project</h3>
-                                        <p class="text-gray-400 text-sm mb-4">
-                                                Currently working on new projects! Check back soon for updates.
+                                        <h3 class="text-lg font-semibold text-gray-900 mb-2">Temperature Time Machine</h3>
+                                        <p class="text-gray-600 text-sm mb-4">
+                                                Advanced Python-based climate data analysis system processing 155+ years of historical temperature data from NOAA and NASA databases.
                                         </p>
                                         <div class="flex flex-wrap gap-1 mb-4">
-                                                <span class="px-2 py-1 bg-gray-50 text-gray-400 rounded text-xs">Coming Soon</span>
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Python</span>
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Data Science</span>
+                                                <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs">Machine Learning</span>
                                         </div>
-                                        <span class="text-gray-400 font-medium text-sm">In Development</span>
+                                        <span class="text-orange-600 hover:text-orange-700 font-medium text-sm">View Details →</span>
                                 </div>
                         </div>
                 </div>
@@ -441,6 +446,61 @@
                                                 <button onclick="openPDFModal()" class="flex-1 border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white py-2 px-4 rounded-lg text-center transition duration-200">
                                                         Documentation
                                                 </button>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+        <!-- Temperature Time Machine Modal -->
+        <div id="temperature-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+                <div class="bg-white rounded-xl max-w-4xl w-full max-h-[95vh] overflow-y-auto">
+                        <div class="p-6">
+                                <div class="flex justify-between items-center mb-4">
+                                        <h3 class="text-2xl font-bold text-gray-900">Temperature Time Machine</h3>
+                                        <button onclick="closeModal('temperature-modal')" class="text-gray-400 hover:text-gray-600">
+                                                <i class="fas fa-times text-xl"></i>
+                                        </button>
+                                </div>
+                                <div class="mb-4">
+                                        <div class="w-full h-48 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mb-4">
+                                                <i class="fas fa-chart-line text-6xl text-white opacity-80"></i>
+                                        </div>
+                                        <p class="text-gray-600 mb-4">
+                                                Advanced Python-based climate data analysis system that processes 155+ years of historical temperature data from NOAA GHCN and NASA GISTEMP databases. Built a comprehensive data engineering pipeline using Pandas, NumPy, and SciPy for automated data acquisition, preprocessing, and time series analysis of 57,000+ daily climate records. Implemented multivariate linear regression (Statsmodels) and Fast Fourier Transform analysis to identify temperature trends and periodic climate patterns. Developed sophisticated visualizations using Matplotlib and Seaborn, including animated trend analysis with FuncAnimation for dynamic climate pattern presentation.
+                                        </p>
+                                        <p class="text-gray-600 mb-4">
+                                                The platform features automated multi-source data integration with robust error handling, statistical modeling with hypothesis testing and confidence intervals, and frequency domain analysis to detect seasonal cycles and long-term climate oscillations. Generated 6 publication-quality visualizations and 1 animated GIF demonstrating temporal climate evolution. Technical implementation includes memory-optimized data structures, vectorized operations for large dataset processing, and modular architecture with comprehensive documentation. Demonstrates expertise in scientific computing, statistical analysis, data visualization, and climate science applications.
+                                        </p>
+                                        <div class="mb-4">
+                                                <h4 class="font-semibold text-gray-900 mb-2">Key Features:</h4>
+                                                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                                        <li>155+ years of NOAA GHCN and NASA GISTEMP data processing</li>
+                                                        <li>57,000+ daily climate records time series analysis</li>
+                                                        <li>Multivariate linear regression and FFT analysis</li>
+                                                        <li>Animated visualizations with FuncAnimation</li>
+                                                        <li>Statistical modeling with hypothesis testing</li>
+                                                        <li>Frequency domain analysis for seasonal detection</li>
+                                                        <li>Memory-optimized data structures and vectorized operations</li>
+                                                        <li>6 publication-quality visualizations + animated GIF</li>
+                                                </ul>
+                                        </div>
+                                        <div class="flex flex-wrap gap-2 mb-4">
+                                                <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Python</span>
+                                                <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Pandas</span>
+                                                <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">NumPy</span>
+                                                <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">SciPy</span>
+                                                <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Matplotlib</span>
+                                                <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Seaborn</span>
+                                                <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-sm">Statsmodels</span>
+                                        </div>
+                                        <div class="flex space-x-4">
+                                                <a href="#" class="flex-1 bg-orange-600 hover:bg-orange-700 text-white py-2 px-4 rounded-lg text-center transition duration-200">
+                                                        View Code
+                                                </a>
+                                                <a href="#" class="flex-1 border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white py-2 px-4 rounded-lg text-center transition duration-200">
+                                                        View Analysis
+                                                </a>
                                         </div>
                                 </div>
                         </div>
