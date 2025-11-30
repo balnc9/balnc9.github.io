@@ -1,37 +1,24 @@
-import "./index.css"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./index.css";
 
-import Dashboard from "./components/Dashboard";
-import IntroScreen from "./components/IntroScreen";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import PortfolioDisplay from "./components/PortfolioDisplay";
-import ContactSection from "./components/ContactSection";
-
+import Navigation from "./components/Navigation";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Skills from "./pages/Skills";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
 export default function App() {
         return (
-            <>
-                <Dashboard />
-
-                <section id ="intro" className = "section intro-section">
-                    <IntroScreen />
-                </section>
-
-                <section id ="about" className = "section about-section">
-                    <About />
-                </section>
-
-                <section id ="skills" className = "section skills-section">
-                    <Skills />
-                </section>
-
-                <section id="portfolio" className="portfolio-section">
-                    <PortfolioDisplay />
-                </section>
-
-                <section id="contact" className="section contact-section">
-                    <ContactSection />
-                </section>
-            </>
+                <Router>
+                        <Navigation />
+                        <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/about" element={<About />} />
+                                <Route path="/skills" element={<Skills />} />
+                                <Route path="/projects" element={<Projects />} />
+                                <Route path="/contact" element={<Contact />} />
+                        </Routes>
+                </Router>
         );
 }
