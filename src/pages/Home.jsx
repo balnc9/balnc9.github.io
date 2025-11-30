@@ -27,8 +27,8 @@ export default function Home() {
                                                         alignItems: "baseline",
                                                         gap: "0.75rem"
                                                 }}>
-                                                        <span style={{ color: "#0066cc", fontSize: "1.5rem" }}>~</span>
-                                                        <span style={{ fontSize: "2.5rem", fontWeight: "normal" }}>matthew chin</span>
+                                                        <span style={{ color: "#0066cc", fontSize: "2rem", fontWeight: "1000" }}>~</span>
+                                                        <span style={{ fontSize: "2.2rem", fontWeight: "normal" }}>matthew chin</span>
                                                 </div>
                                                 <div style={{
                                                         fontSize: "1.2rem",
