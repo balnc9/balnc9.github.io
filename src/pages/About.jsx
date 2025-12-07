@@ -15,7 +15,7 @@ export default function About() {
                                 Below are some of my hobbies outside of school and work, and things that I would love to talk about!
                         </p>
                         <ul>
-                                <li> <b>Sports</b>: volleyball, climbing, skiing, pickleball, and basketball [ not anymore :( ]</li>
+                                <li> <b>Sports</b>: volleyball, climbing, and all-mountain skiing</li>
                                 <li> <b>Music</b>: i play the bass guitar + a little bit of acoustic, and i love listening to all types of music but some of my favorite artists are: Sade, Malcolm Todd, BROCKHAMPTON, and Wisp.</li>
                                 <li> <b>Photography</b>: i love taking photos and videos of my friends! I currently shoot on a <a href="https://www.sony.com/za/electronics/interchangeable-lens-cameras/ilce-6500-body-kit" target="_blank" rel="noopener noreferrer" style={{ color: "#0066cc", textDecoration: "underline" }}>Sony A6500</a> and a <a href="https://uk.pcmag.com/cameras/3926/canon-powershot-elph-340-hs" target="_blank" rel="noopener noreferrer" style={{ color: "#0066cc", textDecoration: "underline" }}>Canon Powershot ELPH340 HS</a></li>
 
