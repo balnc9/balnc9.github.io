@@ -13,6 +13,19 @@ export default function Projects() {
                                 "Implemented geo-optimization by converting 10+ trending spots per city into coordinates, enabling cluster-based day grouping that minimizes travel time.",
                                 "Created an interactive React + TS frontend with Google Maps, Places Autocomplete, and export-to-Google-Maps flows for day-by-day itineraries."
                         ]
+                },
+                {
+                        name: "Kubernetes/minikube (Open Source Contribution)",
+                        date: "December 2025",
+                        github: "https://github.com/kubernetes/minikube",
+                        tech: "Go, Linux, systemd, Docker",
+                        description:
+                                "Unified CRI-O service configuration across Minikube’s ISO and KIC environments to keep local clusters consistent with production-grade runtimes.",
+                        highlights: [
+                                "Contributed to Minikube, the local Kubernetes toolkit for running single-node clusters without a full cloud setup.",
+                                "Aligned CRI-O systemd service definitions between ISO and container-based KIC builds to eliminate configuration drift and runtime bugs.",
+                                "Updated the kicbase image to ship a custom crio.service and sysconfig settings so CRI-O behaves consistently across Minikube environments."
+                        ]
                 }
         ];
 
