@@ -122,6 +122,77 @@ a:hover {
         margin: 0 auto;
 }
 
+.projects-page {
+        padding: 6rem 3rem 3rem 3rem;
+        max-width: 1000px;
+}
+
+.projects-grid {
+        display: grid;
+        gap: 1.5rem;
+}
+
+.project-card {
+        background-color: #ffffff;
+        border: 1px solid #e6e6e6;
+        border-radius: 18px;
+        padding: 1.75rem 1.5rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.06);
+}
+
+.project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+}
+
+.project-title {
+        margin: 0;
+        font-size: 1.6rem;
+        line-height: 1.2;
+}
+
+.project-meta {
+        font-size: 0.95rem;
+        color: #4a4a4a;
+        margin-top: 0.2rem;
+}
+
+.project-link {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #0066cc;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+}
+
+.project-description {
+        margin: 0.5rem 0 0.75rem 0;
+        line-height: 1.6;
+}
+
+.project-tech {
+        display: block;
+        font-size: 1rem;
+        color: #2f2f2f;
+        margin-bottom: 0.75rem;
+}
+
+.project-points {
+        padding-left: 1.1rem;
+        margin: 0;
+        display: grid;
+        gap: 0.6rem;
+}
+
 @media (max-width: 768px) {
         .navbar {
                 padding: 1.5rem 2rem;
@@ -134,6 +205,19 @@ a:hover {
 
         .page-container {
                 padding: 4rem 1.5rem 1.5rem 1.5rem;
+        }
+
+        .projects-page {
+                padding: 5rem 1.5rem 2rem 1.5rem;
+        }
+
+        .project-card {
+                padding: 1.5rem 1.25rem;
+        }
+
+        .project-header {
+                flex-direction: column;
+                align-items: flex-start;
         }
 
         h1 {
