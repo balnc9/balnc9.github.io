@@ -1,7 +1,7 @@
 export default function Projects() {
         const projects = [
                 {
-                        name: "Grafux",
+                        name: "grafux",
                         date: "March 2025",
                         github: "https://github.com/balnc9/grafux",
                         tech: "Go, HTML5 Canvas, d3-force, YAML",
