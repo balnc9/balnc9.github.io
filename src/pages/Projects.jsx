@@ -1,6 +1,21 @@
 export default function Projects() {
         const projects = [
                 {
+                        name: "Grafux",
+                        date: "March 2025",
+                        github: "https://github.com/balnc9/grafux",
+                        tech: "Go, HTML5 Canvas, d3-force, YAML",
+                        description:
+                                "A CLI tool that scans any directory on your filesystem and renders it as a real-time, interactive force-directed graph in the browser — essentially Obsidian's graph view, but for any codebase or folder.",
+                        highlights: [
+                                "Built a Go CLI tool that visualizes any filesystem as a real-time interactive force-directed graph, using go:embed to ship the entire frontend as a zero-dependency single binary.",
+                                "Implemented a d3-force physics simulation on HTML5 Canvas with cursor repulsion, hover highlighting, and configurable physics parameters — sustaining 60fps with thousands of nodes.",
+                                "Designed a layered configuration system (defaults → YAML file → CLI flags) with gzip-compressed JSON API responses and support for multiple graph layout algorithms.",
+                                "Achieved cross-platform auto-browser-launch and random port allocation with no external dependencies."
+                        ],
+                        demoVideo: "/demos/grafux-demo.mov"
+                },
+                {
                         name: "Itinera",
                         date: "November 2025",
                         github: "https://github.com/balnc9/itinera",
@@ -55,6 +70,19 @@ export default function Projects() {
                                                                 github ->
                                                         </a>
                                                 </div>
+
+                                                {project.demoVideo && (
+                                                        <div className="project-demo">
+                                                                <video
+                                                                        src={project.demoVideo}
+                                                                        controls
+                                                                        playsInline
+                                                                        className="project-demo-video"
+                                                                >
+                                                                        Your browser does not support the video tag.
+                                                                </video>
+                                                        </div>
+                                                )}
 
                                                 <p className="project-description">{project.description}</p>
                                                 <em className="project-tech">{project.tech}</em>
