@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const contacts = [
         { label: "email", value: "mtwchin@gmail.com", href: "mailto:mtwchin@gmail.com" },
         { label: "linkedin", value: "linkedin.com/in/matthewleechin", href: "https://linkedin.com/in/matthewleechin" },
-        { label: "github", value: "github.com/balnc9", href: "https://github.com/balnc9" },
+        { label: "github", value: "github.com/mtwchin", href: "https://github.com/mtwchin" },
 ];
 
 export default function Contact() {
