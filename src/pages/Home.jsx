@@ -106,7 +106,7 @@ export default function Home() {
                                                                 gap: "0.45rem",
                                                         }}>
                                                                 {[
-                                                                        { href: "https://github.com/balnc9", label: "github" },
+                                                                        { href: "https://github.com/mtwchin", label: "github" },
                                                                         { href: "https://linkedin.com/in/matthewleechin", label: "linkedin" },
                                                                         { href: "mailto:mtwchin@gmail.com", label: "email" },
                                                                 ].map(({ href, label }) => (
