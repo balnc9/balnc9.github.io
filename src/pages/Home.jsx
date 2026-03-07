@@ -1,106 +1,141 @@
+import { motion } from "framer-motion";
 import ParticlesBackground from "../components/ParticlesBackground";
 
 export default function Home() {
         return (
                 <>
                         <ParticlesBackground id="tsparticles" />
-                        <div className="page-container" style={{
+                        <div style={{
                                 display: "flex",
-                                flexDirection: "column",
+                                alignItems: "center",
                                 justifyContent: "center",
                                 minHeight: "100vh",
-                                maxWidth: "700px",
-                                paddingLeft: "6rem"
+                                position: "relative",
+                                zIndex: 5,
                         }}>
-                                <div id="repulse-content" style={{
-                                        backgroundColor: "rgba(255, 255, 255, 1)",
-                                        padding: "3rem 4rem",
-                                        borderRadius: "30px",
-                                        display: "inline-block",
-                                        minWidth: "450px"
-                                }}>
-                                        <div style={{ marginBottom: "2rem" }}>
-                                                <div style={{
-                                                        fontSize: "1.2rem",
-                                                        marginBottom: ".75rem",
-                                                        display: "flex",
-                                                        alignItems: "baseline",
-                                                        gap: "0.75rem"
+                                <motion.div
+                                        id="repulse-content"
+                                        initial={{ opacity: 0, y: 28, scale: 0.97 }}
+                                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                                        transition={{ duration: 0.45, ease: "easeOut" }}
+                                        style={{
+                                                background: "var(--bg1)",
+                                                border: "1px solid var(--bg2)",
+                                                borderRadius: "6px",
+                                                overflow: "hidden",
+                                                minWidth: "340px",
+                                                maxWidth: "380px",
+                                                boxShadow: "0 16px 48px rgba(0,0,0,0.55), 0 0 0 1px rgba(235,219,178,0.04)",
+                                        }}
+                                >
+                                        {/* Terminal header */}
+                                        <div style={{
+                                                background: "var(--bg2)",
+                                                padding: "0.6rem 1rem",
+                                                display: "flex",
+                                                alignItems: "center",
+                                                gap: "0.45rem",
+                                                borderBottom: "1px solid var(--bg3)",
+                                                userSelect: "none",
+                                        }}>
+                                                <span style={{ width: 11, height: 11, borderRadius: "50%", background: "var(--red)", display: "inline-block", opacity: 0.85 }} />
+                                                <span style={{ width: 11, height: 11, borderRadius: "50%", background: "var(--yellow)", display: "inline-block", opacity: 0.85 }} />
+                                                <span style={{ width: 11, height: 11, borderRadius: "50%", background: "var(--green)", display: "inline-block", opacity: 0.85 }} />
+                                                <span style={{
+                                                        marginLeft: "auto",
+                                                        color: "var(--fg3)",
+                                                        fontSize: "0.72rem",
+                                                        fontFamily: "'JetBrains Mono', monospace",
+                                                        letterSpacing: "0.03em",
                                                 }}>
-                                                        <span style={{ color: "#0066cc", fontSize: "2rem", fontWeight: "1000" }}>~</span>
-                                                        <span style={{ fontSize: "2.2rem", fontWeight: "normal" }}>matthew chin</span>
-                                                </div>
-                                                <div style={{
-                                                        fontSize: "1.2rem",
-                                                        fontStyle: "italic",
-                                                        color: "#000000",
-                                                        paddingBottom: "0.25rem"
-                                                }}>
-                                                        umd.edu
-                                                </div>
+                                                        matthew@portfolio: ~
+                                                </span>
                                         </div>
 
-                                        <div style={{ marginBottom: "1.5rem" }}>
-                                                <h2 style={{
-                                                        fontSize: "1.4rem",
-                                                        marginBottom: "0.5rem",
-                                                        fontWeight: 600
-                                                }}>
-                                                        about
-                                                </h2>
-                                                <p style={{
-                                                        fontSize: "1rem",
-                                                        lineHeight: "1.6",
-                                                        color: "#000000"
-                                                }}>
-                                                        junior at the university of maryland studying computer science
-                                                        interested in software engineering and web development
-                                                </p>
-                                        </div>
+                                        {/* Content */}
+                                        <div style={{ padding: "1.1rem 1.75rem 1.25rem" }}>
+                                                {/* Name */}
+                                                <div style={{ marginBottom: "0.85rem" }}>
+                                                        <div style={{
+                                                                display: "flex",
+                                                                alignItems: "baseline",
+                                                                gap: "0.6rem",
+                                                                marginBottom: "0.3rem",
+                                                        }}>
+                                                                <span style={{
+                                                                        color: "var(--yellow)",
+                                                                        fontSize: "1.55rem",
+                                                                        fontWeight: 700,
+                                                                        lineHeight: 1,
+                                                                        fontFamily: "'JetBrains Mono', monospace",
+                                                                }}>~</span>
+                                                                <span style={{
+                                                                        fontSize: "1.55rem",
+                                                                        fontWeight: 300,
+                                                                        color: "var(--fg)",
+                                                                        fontFamily: "'JetBrains Mono', monospace",
+                                                                        letterSpacing: "-0.02em",
+                                                                }}>matthew chin</span>
+                                                        </div>
+                                                        <div style={{
+                                                                fontSize: "0.82rem",
+                                                                color: "var(--fg3)",
+                                                                fontFamily: "'JetBrains Mono', monospace",
+                                                                fontStyle: "italic",
+                                                        }}>
+                                                                umd.edu
+                                                        </div>
+                                                </div>
 
-                                        <div style={{ marginBottom: "1.5rem", position: "relative" }}
-                                                onMouseEnter={() => {
-                                                        const canvas = document.getElementById("tsparticles");
-                                                        if (canvas) canvas.style.pointerEvents = "none";
-                                                }}
-                                                onMouseLeave={() => {
-                                                        const canvas = document.getElementById("tsparticles");
-                                                        if (canvas) canvas.style.pointerEvents = "auto";
-                                                }}>
-                                                <h2 style={{
-                                                        fontSize: "1.4rem",
-                                                        marginBottom: "0.75rem",
-                                                        fontWeight: "normal"
-                                                }}>
-                                                        links
-                                                </h2>
-                                                <div style={{
-                                                        display: "flex",
-                                                        flexDirection: "column",
-                                                        gap: "0.6rem",
-                                                        fontSize: "1rem"
-                                                }}>
-                                                        <a href="https://github.com/balnc9"
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                style={{ color: "#0066cc", textDecoration: "underline" }}>
-                                                                github →
-                                                        </a>
-                                                        <a href="https://linkedin.com/in/matthewleechin"
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                style={{ color: "#0066cc", textDecoration: "underline" }}>
-                                                                linkedin →
-                                                        </a>
-                                                        <a href="mailto:mtwchin@gmail.com"
-                                                                style={{ color: "#0066cc", textDecoration: "underline" }}>
-                                                                email →
-                                                        </a>
+                                                {/* About */}
+                                                <div style={{ marginBottom: "0.8rem" }}>
+                                                        <div className="section-label">about</div>
+                                                        <p style={{ margin: 0, fontSize: "0.88rem", lineHeight: 1.7 }}>
+                                                                junior at the university of maryland studying
+                                                                computer science. interested in software engineering
+                                                                and web development.
+                                                        </p>
+                                                </div>
+
+                                                {/* Links */}
+                                                <div>
+                                                        <div className="section-label">links</div>
+                                                        <div style={{
+                                                                display: "flex",
+                                                                flexDirection: "column",
+                                                                gap: "0.45rem",
+                                                        }}>
+                                                                {[
+                                                                        { href: "https://github.com/balnc9", label: "github" },
+                                                                        { href: "https://linkedin.com/in/matthewleechin", label: "linkedin" },
+                                                                        { href: "mailto:mtwchin@gmail.com", label: "email" },
+                                                                ].map(({ href, label }) => (
+                                                                        <a
+                                                                                key={label}
+                                                                                href={href}
+                                                                                target={href.startsWith("mailto") ? undefined : "_blank"}
+                                                                                rel="noopener noreferrer"
+                                                                                style={{
+                                                                                        color: "var(--blue)",
+                                                                                        fontSize: "0.88rem",
+                                                                                        fontFamily: "'JetBrains Mono', monospace",
+                                                                                        display: "inline-flex",
+                                                                                        alignItems: "center",
+                                                                                        gap: "0.4rem",
+                                                                                        transition: "color 0.18s ease",
+                                                                                }}
+                                                                                onMouseEnter={e => e.currentTarget.style.color = "var(--yellow)"}
+                                                                                onMouseLeave={e => e.currentTarget.style.color = "var(--blue)"}
+                                                                        >
+                                                                                <span style={{ color: "var(--fg3)" }}>→</span>
+                                                                                {label}
+                                                                        </a>
+                                                                ))}
+                                                        </div>
                                                 </div>
                                         </div>
-                                </div>
+                                </motion.div>
                         </div>
                 </>
         );
 }
-

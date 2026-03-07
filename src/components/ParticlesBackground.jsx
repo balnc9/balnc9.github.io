@@ -17,23 +17,16 @@ const ParticlesBackground = (props) => {
 
         const options = useMemo(
                 () => ({
+                        fullScreen: { enable: true, zIndex: 10 },
                         background: {
-                                color: {
-                                        value: "transparent",
-                                },
+                                color: { value: "transparent" },
                         },
                         fpsLimit: 120,
                         interactivity: {
                                 detectsOn: "window",
                                 events: {
-                                        onClick: {
-                                                enable: true,
-                                                mode: "attract",
-                                        },
-                                        onHover: {
-                                                enable: true,
-                                                mode: "grab",
-                                        },
+                                        onClick: { enable: true, mode: "attract" },
+                                        onHover: { enable: true, mode: "grab" },
                                         onDiv: {
                                                 selectors: "#repulse-navbar, #repulse-content",
                                                 enable: true,
@@ -41,73 +34,50 @@ const ParticlesBackground = (props) => {
                                         },
                                 },
                                 modes: {
-                                        push: {
-                                                distance: 1000,
-                                                duration: 25,
-                                        },
-                                        grab: {
-                                                distance: 170,
-                                        },
+                                        push: { distance: 1000, duration: 25 },
+                                        grab: { distance: 160, links: { opacity: 0.4 } },
                                         repulse: {
-                                                distance: 400,
+                                                distance: 380,
                                                 duration: 0.1,
-                                                factor: 20,
-                                                speed: 10,
+                                                factor: 18,
+                                                speed: 8,
                                         },
                                 },
                         },
                         particles: {
-                                color: {
-                                        value: "#000000",
-                                },
+                                color: { value: "#ebdbb2" },
                                 links: {
-                                        color: "#000000",
-                                        distance: 220,
+                                        color: "#665c54",
+                                        distance: 210,
                                         enable: true,
-                                        opacity: 0.5,
+                                        opacity: 0.35,
                                         width: 1,
                                 },
                                 move: {
                                         direction: "none",
                                         enable: true,
-                                        outModes: {
-                                                default: "bounce",
-                                        },
+                                        outModes: { default: "bounce" },
                                         random: true,
-                                        speed: 0.5,
+                                        speed: 0.45,
                                         straight: false,
-                                        attract: {
-                                                enable: false,
-                                        },
+                                        attract: { enable: false },
                                 },
                                 number: {
-                                        density: {
-                                                enable: true,
-                                                area: 500,
-                                        },
-                                        value: 220,
+                                        density: { enable: true, area: 500 },
+                                        value: 200,
                                 },
-                                opacity: {
-                                        value: 0.8,
-                                },
-                                shape: {
-                                        type: "circle",
-                                },
-                                size: {
-                                        value: { min: 2, max: 2 },
-                                },
+                                opacity: { value: 0.45 },
+                                shape: { type: "circle" },
+                                size: { value: { min: 1.5, max: 2.5 } },
                         },
                         detectRetina: true,
                 }),
                 []
         );
 
-        if (!init) {
-                return null;
-        }
+        if (!init) return null;
 
-        return <Particles id={props.id} init={particlesLoaded} options={options} />;
+        return <Particles id={props.id} init={particlesLoaded} options={options} style={{ pointerEvents: "none" }} />;
 };
 
 export default ParticlesBackground;
-

@@ -1,14 +1,27 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+const links = [
+        { to: "/", label: "home" },
+        { to: "/about", label: "about" },
+        { to: "/skills", label: "skills" },
+        { to: "/projects", label: "projects" },
+        { to: "/contact", label: "contact" },
+];
 
 export default function Navigation() {
+        const location = useLocation();
+
         return (
                 <nav className="navbar" id="repulse-navbar">
-                        <Link to="/">home</Link>
-                        <Link to="/about">about</Link>
-                        <Link to="/skills">skills</Link>
-                        <Link to="/projects">projects</Link>
-                        <Link to="/contact">contact</Link>
+                        {links.map(({ to, label }) => (
+                                <Link
+                                        key={to}
+                                        to={to}
+                                        className={`nav-link${location.pathname === to ? " active" : ""}`}
+                                >
+                                        {label}
+                                </Link>
+                        ))}
                 </nav>
         );
 }
-

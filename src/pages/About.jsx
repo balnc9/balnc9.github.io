@@ -1,26 +1,69 @@
+import { motion } from "framer-motion";
+
 export default function About() {
         return (
-                <div className="page-container" style={{
-                        padding: "9rem 5rem 2rem 5rem",
-                        maxWidth: "900px"
-                }}>
-                        <h1 style={{ bottomPadding: "0.5rem" }}><b>matt's <span style={{ color: "#0066cc" }}>about page</span></b></h1>
-                        <p>Hello! I'm Matthew Chin.</p>
-                        <p>
-                                I'm a Junior at UMD studying Computer Science and Business, currently studying abroad in Madrid. I'm currently building my skills in web development and general software engineering.
-                                I'm currently based in the DC Metro Area, but I've grown up mostly in Northern New Jersey and the Boston Area.
-                        </p>
-                        <p>
-                                I'm currently helping out a fashion-tech startup called Colexia as a Software Engineering Intern, and when I'm on campus, I help out as a Undergraduate Research Assistant at the <a href="https://www.digitalengagementlab.org/" target="_blank" rel="noopener noreferrer" style={{ color: "#0066cc", textDecoration: "underline" }}>Digital Media Engagement Lab</a> at the University of Maryland.
-                                Below are some of my hobbies outside of school and work, and things that I would love to talk about!
-                        </p>
-                        <ul>
-                                <li> <b>Sports</b>: volleyball, climbing, and all-mountain skiing</li>
-                                <li> <b>Music</b>: i play the bass guitar + a little bit of acoustic, and i love listening to all types of music but some of my favorite artists are: Sade, Malcolm Todd, BROCKHAMPTON, and Wisp.</li>
-                                <li> <b>Photography</b>: i love taking photos and videos of my friends! I currently shoot on a <a href="https://www.sony.com/za/electronics/interchangeable-lens-cameras/ilce-6500-body-kit" target="_blank" rel="noopener noreferrer" style={{ color: "#0066cc", textDecoration: "underline" }}>Sony A6500</a> and a <a href="https://uk.pcmag.com/cameras/3926/canon-powershot-elph-340-hs" target="_blank" rel="noopener noreferrer" style={{ color: "#0066cc", textDecoration: "underline" }}>Canon Powershot ELPH340 HS</a></li>
+                <motion.div
+                        initial={{ opacity: 0, y: 18 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.35, ease: "easeOut" }}
+                        className="page-container"
+                        style={{ padding: "7rem 4rem 3rem 4rem", maxWidth: "780px" }}
+                >
+                        <div className="section-label" style={{ marginBottom: "0.4rem" }}>who am i</div>
+                        <h1 style={{ color: "var(--yellow)", marginBottom: "1.5rem" }}>matthew chin</h1>
 
-                        </ul>
-                </div>
+                        <p>
+                                Junior at UMD studying Computer Science and Business, currently studying abroad in Madrid.
+                                Building skills in web development and general software engineering.
+                        </p>
+                        <p>
+                                Based in the DC Metro Area, grew up between Northern New Jersey and the Boston area.
+                        </p>
+
+                        <hr className="grv-divider" />
+
+                        <div style={{ marginBottom: "1.5rem" }}>
+                                <div className="section-label" style={{ marginBottom: "0.5rem" }}>work</div>
+                                <p style={{ marginBottom: "0.4rem" }}>
+                                        Software Engineering Intern at{" "}
+                                        <span style={{ color: "var(--fg1)" }}>Colexia</span>
+                                        {" "}— a fashion-tech startup.
+                                </p>
+                                <p style={{ margin: 0 }}>
+                                        Undergraduate Research Assistant at the{" "}
+                                        <a
+                                                href="https://www.digitalengagementlab.org/"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                        >
+                                                Digital Media Engagement Lab
+                                        </a>
+                                        {" "}at UMD.
+                                </p>
+                        </div>
+
+                        <hr className="grv-divider" />
+
+                        <div>
+                                <div className="section-label" style={{ marginBottom: "0.75rem" }}>outside of work</div>
+                                <ul className="about-list">
+                                        <li>
+                                                <span style={{ color: "var(--fg1)", fontWeight: 500 }}>sports</span>
+                                                {" "}— volleyball, climbing, all-mountain skiing
+                                        </li>
+                                        <li>
+                                                <span style={{ color: "var(--fg1)", fontWeight: 500 }}>music</span>
+                                                {" "}— bass guitar + acoustic. favorites: Sade, Malcolm Todd, BROCKHAMPTON, Wisp
+                                        </li>
+                                        <li>
+                                                <span style={{ color: "var(--fg1)", fontWeight: 500 }}>photography</span>
+                                                {" "}— shooting on a{" "}
+                                                <a href="https://www.sony.com/za/electronics/interchangeable-lens-cameras/ilce-6500-body-kit" target="_blank" rel="noopener noreferrer">Sony A6500</a>
+                                                {" "}and{" "}
+                                                <a href="https://uk.pcmag.com/cameras/3926/canon-powershot-elph-340-hs" target="_blank" rel="noopener noreferrer">Canon Powershot ELPH340 HS</a>
+                                        </li>
+                                </ul>
+                        </div>
+                </motion.div>
         );
 }
-
